@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang=id>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Sugar ORM: Manipulasi Database pada Android Secara Mudah | Blog Pribadi Fahri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Pada waktu belajar untuk mengajar manipulasi basis data (SQL) lokal dengan menggunakan Android, saya membaca cukup benyak tutorial yang berhubungan dengan topik tersebut. Sekian banyak tutorial yang s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sugar ORM: Manipulasi Database pada Android Secara Mudah">
+<meta property="og:url" content="http://kaqfa.github.io/2015/08/sugarorm-manipulasi-database-pada-android-secara-mudah/index.html">
+<meta property="og:site_name" content="Blog Pribadi Fahri">
+<meta property="og:description" content="Pada waktu belajar untuk mengajar manipulasi basis data (SQL) lokal dengan menggunakan Android, saya membaca cukup benyak tutorial yang berhubungan dengan topik tersebut. Sekian banyak tutorial yang s">
+<meta property="og:image" content="http://fahrifirdaus.web.id/wp-content/uploads/2014/04/drag-drop-272x300.png">
+<meta property="og:image" content="http://kaqfa.github.io/images/new-class-Contact.png">
+<meta property="og:updated_time" content="2016-12-23T17:36:21.391Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sugar ORM: Manipulasi Database pada Android Secara Mudah">
+<meta name="twitter:description" content="Pada waktu belajar untuk mengajar manipulasi basis data (SQL) lokal dengan menggunakan Android, saya membaca cukup benyak tutorial yang berhubungan dengan topik tersebut. Sekian banyak tutorial yang s">
+<meta name="twitter:image" content="http://fahrifirdaus.web.id/wp-content/uploads/2014/04/drag-drop-272x300.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Blog Pribadi Fahri" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Blog Pribadi Fahri</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/images/12924366_10154135895812577_7418501251525546598_n.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Cari" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'pos',
+            PAGES: 'Pages',
+            CATEGORIES: 'kategori',
+            TAGS: 'tag',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Cari" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/images/12924366_10154135895812577_7418501251525546598_n.jpg" />
+            <h2 id="name">Fahri Firdausillah</h2>
+            <h3 id="title">Developer &amp; Lecturer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Semarang, Indonesia</span>
+            <a id="follow" target="_blank" href="https://github.com/kaqfa/">IKUTI</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                22
+                <span>pos</span>
+            </div>
+            <div class="article-info-block">
+                49
+                <span>tag</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/kaqfa" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://twitter.com/kaqfa" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://facebook.com/kaqfa" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-sugarorm-manipulasi-database-pada-android-secara-mudah" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Sugar ORM: Manipulasi Database pada Android Secara Mudah
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/08/sugarorm-manipulasi-database-pada-android-secara-mudah/">
+            <time datetime="2015-08-24T06:04:34.000Z" itemprop="datePublished">2015-08-24</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Akademis/">Akademis</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Akademis/Catatan/">Catatan</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Akademis/Catatan/Pemrograman-Mobile/">Pemrograman Mobile</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/android/">android</a>, <a class="tag-link" href="/tags/database/">database</a>, <a class="tag-link" href="/tags/orm/">orm</a>, <a class="tag-link" href="/tags/sugarorm/">sugarorm</a>, <a class="tag-link" href="/tags/tutorial/">tutorial</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>Pada waktu belajar untuk mengajar manipulasi basis data (SQL) lokal dengan menggunakan Android, saya membaca cukup benyak tutorial yang berhubungan dengan topik tersebut. Sekian banyak tutorial yang saya baca akhirnya saya menyimpulkan koneksi basis data lokal pada pemrograman Android bisa dibilang cukup (kalau bukan sangat) ribet.</p>
+<p>Iseng-iseng saya mencari tutorial manipulasi basis data pada Android dengan menggunakan keyword yang lain, yaitu “Android ORM” dan hasilya ternyata cukup menggembirakan. Ada beberapa pilihan ORM untuk basis data android dan salah satunya yang menarik perhatian saya adalah <a href="http://satyan.github.io/sugar/" title="SugarORM official Github site" target="_blank" rel="external">Sugar ORM</a>. <em>Insanely easy way to work with Android Databases</em>, itulah jaminan yang diberikan.<a id="more"></a></p>
+<blockquote>
+<p>Catatan: Singkatnya ORM adalah teknik pemrograman untuk memetakan basis data relasional ke dalam Object Oriented. Bagi yang ingin memahami lebih lanjut apa itu Object Relational Maping (ORM), bisa membaca deskripsi di halaman wikipedia <a href="http://en.wikipedia.org/wiki/Object-relational_mapping" title="object relational mapping" target="_blank" rel="external">ini</a>.</p>
+</blockquote>
+<p>Karena pada halaman resminya belum ada tutorial penggunaan secara penuh, artikel ini saya tujukan untuk memberikan penjelasan penggunaan Sugar ORM langkah demi langkah secara tepat dan jelas. Oke, untuk membuktikan Sugar ORM dapat digunakan secara <em>insanely easy</em> saya akan membarikan perbandingan dengan manipulasi basis data pada android secara konvensional. Saya akan membuat aplikasi yang sama persis dengan aplikasi yang dibuat pada tutorial dari <a href="http://www.androidhive.info/2011/11/android-sqlite-database-tutorial/" target="_blank" rel="external">AndroidHive</a>. Selanjutnya anda bisa memutuskan, mana cara yang lebih mudah.</p>
+<h2 id="Persiapan-Pembuatan-Project"><a href="#Persiapan-Pembuatan-Project" class="headerlink" title="Persiapan Pembuatan Project"></a>Persiapan Pembuatan Project</h2><ol>
+<li>Yang pertama kali dilakukan untuk menggunakan Sugar ORM tentu saja download <em>library</em>-nya di <a href="https://raw.github.com/satyan/sugar/master/dist/sugar-1.2.jar" title="sugarorm jar" target="_blank" rel="external">sini</a>. Sebagai catatan, sewaktu saya mendownload pustaka tersebut nama file-nya adalah sugar-1.2.jar.zip, untuk dapat digunakan kita harus me-rename-nya menjadi sugar-1.2.jar</li>
+<li>Selanjutnya mari kita membuat project baru pada eclipse ADT, dan saya tidak akan menjelaskan bagaimana caranya, kalau anda masih belum tahu cara membuat project android melalui Eclipse ADT, silahkan tutup dulu artikel ini dan baca dulu artikel dasar pembuatan aplikasi Android.</li>
+<li>Persiapan selanjutnya adalah memasukkan memasukkan _library _SugarORM yang telah didownload pada folder <em>libs</em> pada project kita. Cara yang paling mudah adalah melakukan drag and drop dari file explorer OS kita (jika menggunakan windows berarti Windows Explorer) ke folder libs pada project kita. Cara yang sedikit ribet, klik kanan pada project kita, pilih _<strong>Build Path → Add External Archives</strong>, _kemudian pilih file sugar-1.2.jar yang sudah kita download.<a href="http://fahrifirdaus.web.id/wp-content/uploads/2014/04/drag-drop.png" target="_blank" rel="external"><img src="http://fahrifirdaus.web.id/wp-content/uploads/2014/04/drag-drop-272x300.png" alt="drag-drop"></a></li>
+<li>Persiapan terakhir adalah menambahkan sedikit kode pada AndroidManifest.xml. Tidak banyak kok, cukup tambahkan <code>attribute android:name=&quot;com.orm.SugarApp&quot;</code> dan beberapa elemen <code>meta-data</code> seperti ditunjukkan pada kode di bawah ini.</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">application</span></span></div><div class="line">   <span class="attr">android:icon</span>=<span class="string">"@drawable/ic_launcher"</span></div><div class="line">   <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span></div><div class="line">   <span class="attr">android:theme</span>=<span class="string">"@style/AppTheme"</span></div><div class="line">   <span class="attr">android:name</span>=<span class="string">"com.orm.SugarApp"</span> &gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">"DATABASE"</span> <span class="attr">android:value</span>=<span class="string">"contactsManager.db"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">"VERSION"</span> <span class="attr">android:value</span>=<span class="string">"1"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">"QUERY_LOG"</span> <span class="attr">android:value</span>=<span class="string">"true"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">"DOMAIN_PACKAGE_NAME"</span></span></div><div class="line">             <span class="attr">android:value</span>=<span class="string">"fahri.lat.sugarcontact.tables"</span> /&gt;</div><div class="line"></div><div class="line">  ......</div><div class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span></div></pre></td></tr></table></figure>
+<pre><code>**Penjelasan:**
+
+*   Attribut `android:name=&quot;com.orm.SugarApp&quot;` untuk memberitahukan bahwa aplikasi ini adalah SugarApp.
+*   Metadata Database untuk memberikan nama file penyimpanan basis data.
+*   Metadata Version untuk memberitahukan versi basis data yang kita buat.
+*   Metadata Query_Log untuk mengindikasikan apakah kita ingin melakukan log terhadap query yang dieksekusi.
+*   Metadata Domain_Package_Name sebagai kontrak awal bahwa class ORM yang merepresentasikan tabel basis data disimpan pada package tersebut.
+</code></pre><p>Oke, setelah selesai persiapannya, saatnya kita membuat class ORM untuk representasi tabelnya.</p>
+<h2 id="Buat-Class-ORM"><a href="#Buat-Class-ORM" class="headerlink" title="Buat Class ORM"></a>Buat Class ORM</h2><p>Seperti pada ORM lain, dalam Sugar ORM tiap tabel pada basis data direpresentasikan oleh sebuah class, sedangkan kolomnya direpresentasikan ke dalam attribute. Agar dapat bekerja dengan baik, class representasi tabel harus melakukan extends terhadap class SugarRecord.</p>
+<p><img src="/images/new-class-Contact.png" alt="new class Contact">Lebih jelasnya, buatlah Class baru (class biasa) dengan nama Contact, dan ingat sesuai kontrak kita pada android manifest, simpan semua class table pada package fahri.lat.sugarcontact.tables. Selanjutnya tuliskan kode berikut pada class Contact.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> android.content.Context;</div><div class="line"><span class="keyword">import</span> com.orm.SugarRecord;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Contact</span> <span class="keyword">extends</span> <span class="title">SugarRecord</span>&lt;<span class="title">Contact</span>&gt; </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> String name;</div><div class="line">	<span class="keyword">public</span> String phoneNumber;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Contact</span><span class="params">(Context arg0)</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>(arg0);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Contact</span><span class="params">(Context arg0, String name, String phoneNumber)</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>(arg0);</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">		<span class="keyword">this</span>.phoneNumber = phoneNumber;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Agar class Contact yang kita buat merepresentasikan sebuah tabel bernama Contact pada basis data, kita harus melakukan extends SugarRecord seperti yang ditunjukkan pada baris 4. Jangan lupa sebelumnya kita harus melakukan import library tersebut seperti yang ditunjukkan pada baris ke 2.</li>
+<li>Dua atribut yang dituliskan pada baris ke 5 dan 6 akan di-_transform _menjadi kolom pada tabel Contact. Sengaja kedua attribute tersebut dibuat public untuk memudahkan pengaksesan.</li>
+<li>Kita tidak perlu membuat kolom id, karena kolom tersebut akan di-generate secara otomatis oleh SugarORM.</li>
+<li>By default, setiap kita meng-_extend _SugarRecord kita akan diminta untuk membuat satu constructor yang memiliki parameter Context. Di dalam contoh tersebut, kita membuat 2 parameter. Satu constructor yang hanya memiliki 1 parameter Context saja dan satu constructor dengan parameter Context dan attribute yang lain.</li>
+</ul>
+<p><em>That’s it</em>, hanya cukup itu yang dilakukan dan kita sudah dapat memanipulasi basis data dengan satu tabel tersebut semau kita.</p>
+<h2 id="Saatnya-ORM-Beraksi"><a href="#Saatnya-ORM-Beraksi" class="headerlink" title="Saatnya ORM Beraksi"></a>Saatnya ORM Beraksi</h2><p>Oke, sama seperti yang dicontohkan pada tutorial dari AndroidHive, saya tidak akan mengubah tampilan apapun pada activity, saya hanya akan langsung mengisikan data pada basis data dan menampilkan data tersebut. Tambahkan baris perintah berikut pada activity utama:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">		setContentView(R.layout.activity_main);</div><div class="line"></div><div class="line">		Contact.deleteAll(Contact.class);</div><div class="line"></div><div class="line">		Log.d(<span class="string">"Insert: "</span>, <span class="string">"Inserting .."</span>);</div><div class="line">		Contact contact1 = <span class="keyword">new</span> Contact(<span class="keyword">this</span>, <span class="string">"Ravi"</span>, <span class="string">"9100000000"</span>);</div><div class="line">		Contact contact2 = <span class="keyword">new</span> Contact(<span class="keyword">this</span>, <span class="string">"Srinivas"</span>, <span class="string">"9199999999"</span>);</div><div class="line">		Contact contact3 = <span class="keyword">new</span> Contact(<span class="keyword">this</span>, <span class="string">"Tommy"</span>, <span class="string">"9522222222"</span>);</div><div class="line">		Contact contact4 = <span class="keyword">new</span> Contact(<span class="keyword">this</span>, <span class="string">"Karthik"</span>, <span class="string">"9533333333"</span>);</div><div class="line">		contact1.save();</div><div class="line">		contact2.save();</div><div class="line">		contact3.save();</div><div class="line">		contact4.save();</div><div class="line"></div><div class="line">		Log.d(<span class="string">"Reading: "</span>, <span class="string">"Reading all contacts.."</span>);</div><div class="line">		List&lt;Contact&gt; contacts = Contact.listAll(Contact.class);</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (Contact cn : contacts) &#123;</div><div class="line">            String log = <span class="string">"Id: "</span>+cn.getId()+<span class="string">" ,Name: "</span> + cn.name + <span class="string">" ,Phone: "</span> + cn.phoneNumber;</div><div class="line">            Log.d(<span class="string">"Name: "</span>, log);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">       ....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Pada Activity tersebut kita hanya melakukan penyimpanan data ke dalam basis data dan menampilkan data yang telah tersimpan ke dalam Log. <em>It’s as simple as that</em>.</p>
+<h2 id="Penutup"><a href="#Penutup" class="headerlink" title="Penutup"></a>Penutup</h2><p>Oke, seperti itulah dasar manipulasi basis data pada aplikasi Android dengan menggunakan Sugar ORM. Menurut saya cara tersebut jauh lebih sederhana dibandingkan cara konvensional menggunakan DatabaseHandler dan lain sebagainya. Kalau menurut anda lebih sederhana cara konvensional, oke saya tidak akan memaksakan pendapat.</p>
+<p>Ya betul, tutorial ini memang masih sangat sederhana, karena tujuan dari tutorial ini adalah menunjukkan dasar penggunaan Sugar ORM dan me-<em>rewrite</em> aplikasi kontak yang didapatkan dari AndroidHive. Di tutorial selanjutnya (bila sempat) akan saya tunjukkan bagaimana melakukan operasi basis data yang lebih kompleks dengan menggunakan SugarORM, (bisa saja) meliputi relasi tabel, melakukan query lanjut, bekerja dengan ArrayAdapter, dan lain sebagainya.</p>
+<p>Aplikasi penuh dapat di-<em>download</em> melalui halaman github saya <a href="https://github.com/kaqfa/kuliah_mobile/archive/master.zip" title="SugarContact" target="_blank" rel="external">[di sini]</a>.</p>
+<p>Terima Kasih, Semoga Bermanfaat.</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://kaqfa.github.io/2015/08/sugarorm-manipulasi-database-pada-android-secara-mudah/" data-id="cix1n51w8001hasxj0voogdm3" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://kaqfa.github.io/2015/08/sugarorm-manipulasi-database-pada-android-secara-mudah/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kaqfa.github.io/2015/08/sugarorm-manipulasi-database-pada-android-secara-mudah/">Komentar</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2015/08/android-ui-1-linear-layout/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Lebih baru</strong>
+            <div class="article-nav-title">
+                
+                    Android UI - 1. Linear Layout
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2015/02/github-curriculum-vitae-untuk-programmer/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Lebih Tua</strong>
+            <div class="article-nav-title">Github, Curriculum Vitae untuk Programmer</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">terbaru</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/kenapa-saya-memilih-hexo/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/hexo.png)" alt="Kenapa Saya Memilih Hexo" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/12/kenapa-saya-memilih-hexo/" class="title">Kenapa Saya Memilih Hexo</a></p>
+                            <p class="item-date"><time datetime="2016-12-22T11:38:41.000Z" itemprop="datePublished">2016-12-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/cara-mengecek-foto-hoax/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Google-and-Facebook-against-fake-news-sites.jpg)" alt="Cara Mengecek Foto Hoax" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Catatan/">Catatan</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a></p>
+                            <p class="item-title"><a href="/2016/11/cara-mengecek-foto-hoax/" class="title">Cara Mengecek Foto Hoax</a></p>
+                            <p class="item-date"><time datetime="2016-11-25T14:33:16.000Z" itemprop="datePublished">2016-11-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/04/renungan-hari-kartini/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/ra-kartinis-137th-birthday-5768297812328448-hp2x.jpg)" alt="Renungan Hari Kartini" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Catatan/">Catatan</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a></p>
+                            <p class="item-title"><a href="/2016/04/renungan-hari-kartini/" class="title">Renungan Hari Kartini</a></p>
+                            <p class="item-date"><time datetime="2016-04-21T17:05:33.000Z" itemprop="datePublished">2016-04-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/04/anehnya-rumah-sakit-sumber-waras/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Catatan/">Catatan</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a></p>
+                            <p class="item-title"><a href="/2016/04/anehnya-rumah-sakit-sumber-waras/" class="title">Anehnya Rumah Sakit Sumber Waras</a></p>
+                            <p class="item-date"><time datetime="2016-04-18T04:02:28.000Z" itemprop="datePublished">2016-04-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/04/1-abad-qudsiyyah-membumikan-gusjigang/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/12923378_791462264290967_1619522919362685572_n.jpg)" alt="1 Abad Qudsiyyah, Membumikan GusJiGang" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Inilah-Hidup/">Inilah Hidup</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Inilah-Hidup/Inspirasi/">Inspirasi</a></p>
+                            <p class="item-title"><a href="/2016/04/1-abad-qudsiyyah-membumikan-gusjigang/" class="title">1 Abad Qudsiyyah, Membumikan GusJiGang</a></p>
+                            <p class="item-date"><time datetime="2016-04-02T09:42:34.000Z" itemprop="datePublished">2016-04-02</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">kategori</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/">Akademis</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Algoritma/">Algoritma</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Algoritma/Pemrograman-Dasar/">Pemrograman Dasar</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Catatan/">Catatan</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Catatan/Pemrograman-Mobile/">Pemrograman Mobile</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Pemrograman-Berorientasi-Obyek/">Pemrograman Berorientasi Obyek</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Pemrograman-Dasar/">Pemrograman Dasar</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/">Algoritma</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/Catatan/">Catatan</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/Catatan/Inspirasi/">Inspirasi</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Basis-Data/">Basis Data</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/">Catatan</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Hi-Lite/">Hi-Lite</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/Inspirasi/">Inspirasi</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Tool-Pemrograman/">Tool Pemrograman</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/">Inilah Hidup</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/Inspirasi/">Inspirasi</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/Kata-Kata-Bijak/">Kata-Kata Bijak</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman-Mobile/">Pemrograman Mobile</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">arsip</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">Desember 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">Desember 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">Oktober 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">Agustus 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">Februari 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">Oktober 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">Juli 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">Desember 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">Desember 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">awan tag</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Scanner/" style="font-size: 10px;">Scanner</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/arraylist/" style="font-size: 10px;">arraylist</a> <a href="/tags/basis-data/" style="font-size: 10px;">basis data</a> <a href="/tags/belajar/" style="font-size: 10px;">belajar</a> <a href="/tags/blogging/" style="font-size: 10px;">blogging</a> <a href="/tags/collection/" style="font-size: 10px;">collection</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/curiculum-vitae/" style="font-size: 10px;">curiculum vitae</a> <a href="/tags/dasar-pemrograman/" style="font-size: 10px;">dasar pemrograman</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/framework/" style="font-size: 10px;">framework</a> <a href="/tags/gambar/" style="font-size: 10px;">gambar</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gusjigang/" style="font-size: 10px;">gusjigang</a> <a href="/tags/hasil/" style="font-size: 10px;">hasil</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hoax/" style="font-size: 10px;">hoax</a> <a href="/tags/input-console/" style="font-size: 10px;">input console</a> <a href="/tags/inspirasi/" style="font-size: 10px;">inspirasi</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/kartini/" style="font-size: 10px;">kartini</a> <a href="/tags/koding/" style="font-size: 10px;">koding</a> <a href="/tags/konfirmasi/" style="font-size: 10px;">konfirmasi</a> <a href="/tags/linearlayout/" style="font-size: 10px;">linearlayout</a> <a href="/tags/lulusan-IT/" style="font-size: 10px;">lulusan IT</a> <a href="/tags/makan/" style="font-size: 10px;">makan</a> <a href="/tags/motivasi/" style="font-size: 10px;">motivasi</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/orm/" style="font-size: 10px;">orm</a> <a href="/tags/pahlawan/" style="font-size: 10px;">pahlawan</a> <a href="/tags/pemrograman/" style="font-size: 20px;">pemrograman</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/programming/" style="font-size: 10px;">programming</a> <a href="/tags/proses/" style="font-size: 10px;">proses</a> <a href="/tags/qudsiyyah/" style="font-size: 10px;">qudsiyyah</a> <a href="/tags/rekayasa-perangkat-lunak/" style="font-size: 10px;">rekayasa perangkat lunak</a> <a href="/tags/rumah-sehat/" style="font-size: 10px;">rumah sehat</a> <a href="/tags/static-generator/" style="font-size: 10px;">static generator</a> <a href="/tags/sugarorm/" style="font-size: 10px;">sugarorm</a> <a href="/tags/sumber-waras/" style="font-size: 10px;">sumber waras</a> <a href="/tags/tidur/" style="font-size: 10px;">tidur</a> <a href="/tags/tutorial/" style="font-size: 15px;">tutorial</a> <a href="/tags/wanita/" style="font-size: 10px;">wanita</a> <a href="/tags/web-service/" style="font-size: 10px;">web service</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tautan</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2016 Fahri Firdausillah<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://kaqfa.github.io/2015/08/sugarorm-manipulasi-database-pada-android-secara-mudah/';
+        
+        this.page.identifier = 'sugarorm-manipulasi-database-pada-android-secara-mudah';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'fahri-github' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang=id>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Android UI - 1. Linear Layout | Blog Pribadi Fahri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Tutorial ini merupakan tutorial pertama seri desain dasar aplikasi mobile dengan Android. Semoga setelah ini sempat melanjutkan sampai target mengombinasikan beberapa prinsip layout menjadi aplikasi m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android UI - 1. Linear Layout">
+<meta property="og:url" content="http://kaqfa.github.io/2015/08/android-ui-1-linear-layout/index.html">
+<meta property="og:site_name" content="Blog Pribadi Fahri">
+<meta property="og:description" content="Tutorial ini merupakan tutorial pertama seri desain dasar aplikasi mobile dengan Android. Semoga setelah ini sempat melanjutkan sampai target mengombinasikan beberapa prinsip layout menjadi aplikasi m">
+<meta property="og:image" content="http://kaqfa.github.io/images/androi-UI.jpg">
+<meta property="og:updated_time" content="2016-12-23T17:21:03.555Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android UI - 1. Linear Layout">
+<meta name="twitter:description" content="Tutorial ini merupakan tutorial pertama seri desain dasar aplikasi mobile dengan Android. Semoga setelah ini sempat melanjutkan sampai target mengombinasikan beberapa prinsip layout menjadi aplikasi m">
+<meta name="twitter:image" content="http://kaqfa.github.io/images/androi-UI.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="Blog Pribadi Fahri" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Blog Pribadi Fahri</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/images/12924366_10154135895812577_7418501251525546598_n.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Cari" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'pos',
+            PAGES: 'Pages',
+            CATEGORIES: 'kategori',
+            TAGS: 'tag',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Cari" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/images/12924366_10154135895812577_7418501251525546598_n.jpg" />
+            <h2 id="name">Fahri Firdausillah</h2>
+            <h3 id="title">Developer &amp; Lecturer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Semarang, Indonesia</span>
+            <a id="follow" target="_blank" href="https://github.com/kaqfa/">IKUTI</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                22
+                <span>pos</span>
+            </div>
+            <div class="article-info-block">
+                49
+                <span>tag</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/kaqfa" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://twitter.com/kaqfa" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://facebook.com/kaqfa" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-android-ui-1-linear-layout" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<img src="/images/androi-UI.jpg" class="article-banner" />
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Android UI - 1. Linear Layout
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/08/android-ui-1-linear-layout/">
+            <time datetime="2015-08-24T08:19:56.000Z" itemprop="datePublished">2015-08-24</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Pemrograman-Mobile/">Pemrograman Mobile</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/android/">android</a>, <a class="tag-link" href="/tags/linearlayout/">linearlayout</a>, <a class="tag-link" href="/tags/tutorial/">tutorial</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>Tutorial ini merupakan tutorial pertama seri desain dasar aplikasi mobile dengan Android. Semoga setelah ini sempat melanjutkan sampai target mengombinasikan beberapa prinsip layout menjadi aplikasi mobile berbasis android utuh. Oke, tidak perlu panjang lebar, langsung menuju ke topik pertama yaitu Linear Layout.</p>
+<p>Desain tampilan antarmuka (UI) pada aplikasi mobile cukup berbeda dengan aplikasi desktop. Alasan terbesar yang membedakan keduanya adalah ukuran layar perangkat mobile yang relatif terbatas. Sebab itulah, kebanyakan layout dari aplikasi mobile cenderung sederhana agar tidak menghabiskan tempat. Diantara prinsip layout sederhana yang digunakan pada aplikasi mobile, salah satu yang paling mudah dibuat adalah Linear Layout</p>
+<p>Pada prinsipnya Linear Layout adalah menempatkan komponen visual secara berjejer (baik secara horizontal, maupun vertikal) dengan ukuran yang sama. Dalam android caranya cukup mudah, yaitu buat View LinearLayout sebagai container, kemudian masukkan semua komponen di dalam View LinearLayout tersebut. Secara singkat, urutan penggunaan LinearLayout dalam Android adalah sebagai berikut:<br><a id="more"></a></p>
+<ol>
+<li>Buat Activity baru (atau Android Project baru ).</li>
+<li>Akses file XML layout dalam direktori <strong>res -&gt; layout</strong>.</li>
+<li>Hapus semua isi pada file XML layout tersebut dan ganti dengan View <code>LinearLayout</code>.</li>
+<li>Untuk memastikan LinearLayout diterapkan pada seluruh area, pastikan atribut <code>layout_width</code> dan <code>layout_height</code> bernilai <code>match_parent</code>.</li>
+<li>Tentukan orientasi yang diinginkan, Horizontal atau Vertical.</li>
+<li>Tambahkan komponen yang diperlukan ke dalam Layout.</li>
+</ol>
+<p>Jika anda pernah mengembangkan aplikasi dengan AndroidSDK sebelumnya, saya rasa instruksi singkat di atas sudah cukup jelas. Tapi jika memang belum jelas, atau anda belum memiliki pengalaman yang cukup dalam pengembangan Android, baiklah saya akan berbaik hati menjelaskannya.</p>
+<h3 id="1-Buat-Activity-Project-Baru"><a href="#1-Buat-Activity-Project-Baru" class="headerlink" title="1. Buat Activity / Project Baru"></a>1. Buat Activity / Project Baru</h3><p>Oke untuk yang bagian ini langsung <em>straight forward</em> aja, pilih menu File - New - Android Application Project. Inputkan Application Name, Project Name, dan Package Name sesuai keinginan, kemudian klik Next - Next - Next -Next.</p>
+<p><img src="/images/New-Android-Linear.png" alt="New Android Linear"></p>
+<p>Pada form inputan Activity Name isikan “LinearDemo” dan pada Layout Name isikan <code>activity_linear_demo</code>. Selesai klik Finish.</p>
+<p><img src="/images/Android-Activity-Form.jpg" alt="Android Activity Form"></p>
+<h3 id="2-Akses-file-Layout"><a href="#2-Akses-file-Layout" class="headerlink" title="2. Akses file Layout"></a>2. Akses file Layout</h3><p>Semua file layout pada Android Project selalu disimpan pada direktori res - layout. Pada direktori tersebut, carilah file layout yang sesuai (dalam kasus ini, jika anda menurut pada saya berarti nama file-nya adalah <code>activity_linear_demo.xml</code>), double klik untuk membuka file tersebut.</p>
+<p><img src="/images/layout_file.jpg" alt="layout_file"></p>
+<p>By default (jika anda menggunakan Eclipse), IDE Eclipse akan menampilkan file layout dalam mode grafis. Jika anda masih ingin membaca tutorial ini, saya sarankan anda untuk menggunakan mode XML editor saja. Saya malas kalau harus membuat tutorial drag and drop mode grafis, terlalu banyak capture membuat jari-jari capek.</p>
+<h3 id="3-Hapus-dan-Ganti-dengan-LinearLayout"><a href="#3-Hapus-dan-Ganti-dengan-LinearLayout" class="headerlink" title="3. Hapus dan Ganti dengan LinearLayout"></a>3. Hapus dan Ganti dengan LinearLayout</h3><p>Sekali lagi, Eclipse emang sok pinter. By default, Eclipse langsung memberikan RelativeLayout sebagai layout dasar tampilan, padahal tidak setiap hari kita mau menggunakan RelativeLayout. Jadi pekerjaan selanjutnya adalah menghapus semua isi dari file XML tersebut dan menggantinya dengan LinearLayout seperti ditunjukkan kode di bawah ini :</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">xml</span>&gt;</span></div><div class="line">	</div><div class="line"><span class="tag">&lt;/<span class="name">xml</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="4-Width-dan-Height-Match-Parent"><a href="#4-Width-dan-Height-Match-Parent" class="headerlink" title="4. Width dan Height Match Parent"></a>4. Width dan Height Match Parent</h3><p>Pada kode sebelumnya memang sudah saya tuliskan <code>android:layout_width = &quot;match_parent&quot;</code> dan juga <code>android:layout_height=&quot;match_parent&quot;</code>, tapi untuk memastikan aja barangkali anda kelewatan menuliskannya. Kode tersebut memastikan layout kita memang dipakai seluruh halaman.</p>
+<h3 id="5-Tentukan-Orientasi"><a href="#5-Tentukan-Orientasi" class="headerlink" title="5. Tentukan Orientasi"></a>5. Tentukan Orientasi</h3><p>Ya sama seperti poin sebelumnya, sepertinya saya memang terlalu paranoid. Pastikan anda sudah menambahkan atribut <code>android:orientation=&quot;vertical&quot;</code> untuk membuat komponen yang ditambahkan berjajar secara urut dari atas ke bawah. Tapi kalau anda ingin urut dari kiri ke kanan, berarti ubah nilainya menjadi horizontal.</p>
+<h3 id="6-Tambahkan-Komponen-Lain"><a href="#6-Tambahkan-Komponen-Lain" class="headerlink" title="6. Tambahkan Komponen Lain"></a>6. Tambahkan Komponen Lain</h3><p>Tahap terakhir adalah menambahkan komponen (apapun sesuka anda). Biasanya saya suka menambahkan beberapa button, tapi jika anda tidak memiliki selera yang sama dengan saya, anda boleh juga menambahkan komponen lain seperti <code>EditText</code>, <code>TextView</code>, atau bahkan <code>Spinner</code>.</p>
+<p>Dalam project saya hasil akhir kode dari layout adalah seperti di bawah ini:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">xml</span>&gt;</span></div><div class="line">	</div><div class="line"><span class="tag">&lt;/<span class="name">xml</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>dan saat dijalankan hasilnya seperti di bawah ini:</p>
+<p><img src="/images/LinearLayoutApp.jpg" alt="LinearLayoutApp"></p>
+<p>Loh kok cuman gitu?</p>
+<p>Ya karena ini hanya tutorial awal cara menggunakan LinearLayout saja, kita belum sampai membahas menggunakan style dan komponen desain UI lain untuk mempercantik tampilan. Tunggu saja tutorial berikutnya.</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://kaqfa.github.io/2015/08/android-ui-1-linear-layout/" data-id="cix20ns780000q4xj6c73cwvl" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://kaqfa.github.io/2015/08/android-ui-1-linear-layout/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kaqfa.github.io/2015/08/android-ui-1-linear-layout/">Komentar</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2015/08/array-dan-arraylist-dalam-java/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Lebih baru</strong>
+            <div class="article-nav-title">
+                
+                    Array dan ArrayList dalam Java
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2015/08/sugarorm-manipulasi-database-pada-android-secara-mudah/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Lebih Tua</strong>
+            <div class="article-nav-title">Sugar ORM: Manipulasi Database pada Android Secara Mudah</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">terbaru</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/kenapa-saya-memilih-hexo/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/hexo.png)" alt="Kenapa Saya Memilih Hexo" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/12/kenapa-saya-memilih-hexo/" class="title">Kenapa Saya Memilih Hexo</a></p>
+                            <p class="item-date"><time datetime="2016-12-22T11:38:41.000Z" itemprop="datePublished">2016-12-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/cara-mengecek-foto-hoax/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Google-and-Facebook-against-fake-news-sites.jpg)" alt="Cara Mengecek Foto Hoax" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Catatan/">Catatan</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a></p>
+                            <p class="item-title"><a href="/2016/11/cara-mengecek-foto-hoax/" class="title">Cara Mengecek Foto Hoax</a></p>
+                            <p class="item-date"><time datetime="2016-11-25T14:33:16.000Z" itemprop="datePublished">2016-11-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/04/renungan-hari-kartini/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/ra-kartinis-137th-birthday-5768297812328448-hp2x.jpg)" alt="Renungan Hari Kartini" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Catatan/">Catatan</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a></p>
+                            <p class="item-title"><a href="/2016/04/renungan-hari-kartini/" class="title">Renungan Hari Kartini</a></p>
+                            <p class="item-date"><time datetime="2016-04-21T17:05:33.000Z" itemprop="datePublished">2016-04-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/04/anehnya-rumah-sakit-sumber-waras/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Catatan/">Catatan</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a></p>
+                            <p class="item-title"><a href="/2016/04/anehnya-rumah-sakit-sumber-waras/" class="title">Anehnya Rumah Sakit Sumber Waras</a></p>
+                            <p class="item-date"><time datetime="2016-04-18T04:02:28.000Z" itemprop="datePublished">2016-04-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/04/1-abad-qudsiyyah-membumikan-gusjigang/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/12923378_791462264290967_1619522919362685572_n.jpg)" alt="1 Abad Qudsiyyah, Membumikan GusJiGang" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Inilah-Hidup/">Inilah Hidup</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Inilah-Hidup/Inspirasi/">Inspirasi</a></p>
+                            <p class="item-title"><a href="/2016/04/1-abad-qudsiyyah-membumikan-gusjigang/" class="title">1 Abad Qudsiyyah, Membumikan GusJiGang</a></p>
+                            <p class="item-date"><time datetime="2016-04-02T09:42:34.000Z" itemprop="datePublished">2016-04-02</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">kategori</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/">Akademis</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Algoritma/">Algoritma</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Algoritma/Pemrograman-Dasar/">Pemrograman Dasar</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Catatan/">Catatan</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Catatan/Pemrograman-Mobile/">Pemrograman Mobile</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Pemrograman-Berorientasi-Obyek/">Pemrograman Berorientasi Obyek</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Pemrograman-Dasar/">Pemrograman Dasar</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/">Algoritma</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/Catatan/">Catatan</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/Catatan/Inspirasi/">Inspirasi</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Basis-Data/">Basis Data</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/">Catatan</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Hi-Lite/">Hi-Lite</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/Inspirasi/">Inspirasi</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Tool-Pemrograman/">Tool Pemrograman</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/">Inilah Hidup</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/Inspirasi/">Inspirasi</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/Kata-Kata-Bijak/">Kata-Kata Bijak</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman-Mobile/">Pemrograman Mobile</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">arsip</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">Desember 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">Desember 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">Oktober 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">Agustus 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">Februari 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">Oktober 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">Juli 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">Desember 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">Desember 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">awan tag</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Scanner/" style="font-size: 10px;">Scanner</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/arraylist/" style="font-size: 10px;">arraylist</a> <a href="/tags/basis-data/" style="font-size: 10px;">basis data</a> <a href="/tags/belajar/" style="font-size: 10px;">belajar</a> <a href="/tags/blogging/" style="font-size: 10px;">blogging</a> <a href="/tags/collection/" style="font-size: 10px;">collection</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/curiculum-vitae/" style="font-size: 10px;">curiculum vitae</a> <a href="/tags/dasar-pemrograman/" style="font-size: 10px;">dasar pemrograman</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/framework/" style="font-size: 10px;">framework</a> <a href="/tags/gambar/" style="font-size: 10px;">gambar</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gusjigang/" style="font-size: 10px;">gusjigang</a> <a href="/tags/hasil/" style="font-size: 10px;">hasil</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hoax/" style="font-size: 10px;">hoax</a> <a href="/tags/input-console/" style="font-size: 10px;">input console</a> <a href="/tags/inspirasi/" style="font-size: 10px;">inspirasi</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/kartini/" style="font-size: 10px;">kartini</a> <a href="/tags/koding/" style="font-size: 10px;">koding</a> <a href="/tags/konfirmasi/" style="font-size: 10px;">konfirmasi</a> <a href="/tags/linearlayout/" style="font-size: 10px;">linearlayout</a> <a href="/tags/lulusan-IT/" style="font-size: 10px;">lulusan IT</a> <a href="/tags/makan/" style="font-size: 10px;">makan</a> <a href="/tags/motivasi/" style="font-size: 10px;">motivasi</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/orm/" style="font-size: 10px;">orm</a> <a href="/tags/pahlawan/" style="font-size: 10px;">pahlawan</a> <a href="/tags/pemrograman/" style="font-size: 20px;">pemrograman</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/programming/" style="font-size: 10px;">programming</a> <a href="/tags/proses/" style="font-size: 10px;">proses</a> <a href="/tags/qudsiyyah/" style="font-size: 10px;">qudsiyyah</a> <a href="/tags/rekayasa-perangkat-lunak/" style="font-size: 10px;">rekayasa perangkat lunak</a> <a href="/tags/rumah-sehat/" style="font-size: 10px;">rumah sehat</a> <a href="/tags/static-generator/" style="font-size: 10px;">static generator</a> <a href="/tags/sugarorm/" style="font-size: 10px;">sugarorm</a> <a href="/tags/sumber-waras/" style="font-size: 10px;">sumber waras</a> <a href="/tags/tidur/" style="font-size: 10px;">tidur</a> <a href="/tags/tutorial/" style="font-size: 15px;">tutorial</a> <a href="/tags/wanita/" style="font-size: 10px;">wanita</a> <a href="/tags/web-service/" style="font-size: 10px;">web service</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tautan</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2016 Fahri Firdausillah<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://kaqfa.github.io/2015/08/android-ui-1-linear-layout/';
+        
+        this.page.identifier = 'android-ui-1-linear-layout';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'fahri-github' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

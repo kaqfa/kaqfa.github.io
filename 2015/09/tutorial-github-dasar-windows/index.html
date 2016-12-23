@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang=id>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Tutorial Github Dasar (Windows) | Blog Pribadi Fahri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Pada artikel sebelumnya, saya  sudah menjelaskan manfaat menggunakan Github untuk membentuk curriculum vitae kita. Dan pada artikel kali ini, saya akan bertanggung jawab menjelaskan cara membuat proje">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tutorial Github Dasar (Windows)">
+<meta property="og:url" content="http://kaqfa.github.io/2015/09/tutorial-github-dasar-windows/index.html">
+<meta property="og:site_name" content="Blog Pribadi Fahri">
+<meta property="og:description" content="Pada artikel sebelumnya, saya  sudah menjelaskan manfaat menggunakan Github untuk membentuk curriculum vitae kita. Dan pada artikel kali ini, saya akan bertanggung jawab menjelaskan cara membuat proje">
+<meta property="og:image" content="http://kaqfa.github.io/images/Github-0.jpg">
+<meta property="og:image" content="http://kaqfa.github.io/images/github-00.jpg">
+<meta property="og:image" content="http://kaqfa.github.io/images/github1.jpg">
+<meta property="og:image" content="http://kaqfa.github.io/images/github-2.jpg">
+<meta property="og:image" content="http://kaqfa.github.io/images/github-3.jpg">
+<meta property="og:image" content="http://kaqfa.github.io/images/github-4.jpg">
+<meta property="og:updated_time" content="2016-12-23T17:45:35.423Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tutorial Github Dasar (Windows)">
+<meta name="twitter:description" content="Pada artikel sebelumnya, saya  sudah menjelaskan manfaat menggunakan Github untuk membentuk curriculum vitae kita. Dan pada artikel kali ini, saya akan bertanggung jawab menjelaskan cara membuat proje">
+<meta name="twitter:image" content="http://kaqfa.github.io/images/Github-0.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="Blog Pribadi Fahri" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Blog Pribadi Fahri</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/images/12924366_10154135895812577_7418501251525546598_n.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Cari" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'pos',
+            PAGES: 'Pages',
+            CATEGORIES: 'kategori',
+            TAGS: 'tag',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Cari" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/images/12924366_10154135895812577_7418501251525546598_n.jpg" />
+            <h2 id="name">Fahri Firdausillah</h2>
+            <h3 id="title">Developer &amp; Lecturer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Semarang, Indonesia</span>
+            <a id="follow" target="_blank" href="https://github.com/kaqfa/">IKUTI</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                22
+                <span>pos</span>
+            </div>
+            <div class="article-info-block">
+                49
+                <span>tag</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/kaqfa" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://twitter.com/kaqfa" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://facebook.com/kaqfa" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-tutorial-github-dasar-windows" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Tutorial Github Dasar (Windows)
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/09/tutorial-github-dasar-windows/">
+            <time datetime="2015-09-19T07:13:18.000Z" itemprop="datePublished">2015-09-19</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Catatan/">Catatan</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Catatan/Tool-Pemrograman/">Tool Pemrograman</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/github/">github</a>, <a class="tag-link" href="/tags/koding/">koding</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>Pada artikel <a href="http://fahrifirdaus.web.id/2015/02/github-curriculum-vitae-untuk-programmer/" target="_blank" rel="external">sebelumnya</a>, saya  sudah menjelaskan manfaat menggunakan Github untuk membentuk curriculum vitae kita. Dan pada artikel kali ini, saya akan bertanggung jawab menjelaskan cara membuat project dan melakukan upload ke github dengan menggunakan console dan GUI.</p>
+<h2 id="GUI-Github-for-Windows"><a href="#GUI-Github-for-Windows" class="headerlink" title="GUI Github for Windows"></a>GUI Github for Windows</h2><p>Cara yang paling cepat untuk melakukan koneksi dan interaksi dengan Github adalah dengan menginstall Github for Windows, dan langsung create project dan singkronisasi data dengan aplikasi tersebut. Langkah-langkahnya adalah sebagai berikut:<a id="more"></a></p>
+<h3 id="Registrasi-Akun-github-com"><a href="#Registrasi-Akun-github-com" class="headerlink" title="Registrasi Akun github.com"></a>Registrasi Akun github.com</h3><ol>
+<li>Gunakan browser favorit anda untuk mengakses github.com</li>
+<li>Pada tampilan awal github, kita akan disuguhi form registrasi. Lanjutkan dengan mengisikan username, email, dan password pada form registrasi tersebut dan klik tombol <strong>Sign up for Github</strong>.<br><img src="/images/Github-0.jpg" alt=""></li>
+<li>Langkah kedua registrasi kita akan ditawari beberapa plan untuk registrasi, untuk basic-nya kita bisa memilih free plan di pilihan paling bawah, kemudian klik <strong>Finish sign up</strong> untuk melanjutkan registrasi.<br><img src="/images/github-00.jpg" alt=""></li>
+</ol>
+<h3 id="Instalasi-Github-for-Windows"><a href="#Instalasi-Github-for-Windows" class="headerlink" title="Instalasi Github for Windows"></a>Instalasi Github for Windows</h3><ol>
+<li>Selamat anda telah berhasil melakukan registrasi akun pada github.com dan bisa melanjutkan untuk Download aplikasi Github for Windows di <a href="http://windows.github.com/" target="_blank" rel="external">http://windows.github.com/</a></li>
+<li>Pasang dan jalankan aplikasi tersebut di komputer kita</li>
+<li>Untuk menghubungkan aplikasi github tersebut dengan akun github yang telah kita buat, klik pada menu settings (ikon gear) di kanan atas, dan pilih menu <strong>Options…</strong><br><img src="/images/github1.jpg" alt=""></li>
+<li>Klik link <strong>+ Add accounts</strong> untuk menambahkan akun anda</li>
+<li>Masukkan username dan password sesuai dengan data yang kita masukkan saat registrasi akun github.<br><img src="/images/github-2.jpg" alt=""></li>
+<li>Selanjutnya adalah konfigurasi profile lokal dengan kembali lagi klik menu <strong>Options…</strong> kemudian isikan Full Name dan Email yang kita gunakan untuk daftar di github.com.</li>
+<li>Terakhir klik <strong>Save</strong>.</li>
+</ol>
+<h3 id="Membuat-Repositori-Baru"><a href="#Membuat-Repositori-Baru" class="headerlink" title="Membuat Repositori Baru"></a>Membuat Repositori Baru</h3><ol>
+<li>Untuk membuat repositori koding baru, klik ikon <strong>+</strong> yang ada di kiri atas aplikasi, dan pilih tab <strong>create</strong></li>
+<li>Masukkan nama untuk repository kita, namun ingat karakter yang diterima hanya huruf, “-“ (dash), dan “_” (underscore).<br><img src="/images/github-3.jpg" alt=""></li>
+<li>Aplikasi github akan memilihkan tempat default untuk repository kita. Namun, jika kita ingin menempatkan di lokasi lain, kita dapat memilih browser pada pilihan <strong>Local path</strong>. Dalam kasus saya, karena saya ingin menuliskan koding untuk pemrograman PHP, maka saya meletakkan Local path pada direktori <em>htdocs</em>.</li>
+<li>Setelah itu klik <strong>Create repository</strong></li>
+<li>Selamat anda berhasil membuat repository baru.</li>
+</ol>
+<blockquote>
+<p>Catatan: repository baru yang kita buat akan otomatis dibuatkan file .gitattributes dan .gitignore. Biarkan saja kedua file tersebut, karena sangat berguna untuk kita nantinya. Jika ingin mengetahui lebih lanjut fungsi dari 2 file tersebut silahakan lihat dokumentasi git tentang <a href="http://git-scm.com/docs/gitattributes" target="_blank" rel="external">gitattributes </a>dan <a href="http://git-scm.com/docs/gitignore" target="_blank" rel="external">gitignore</a></p>
+</blockquote>
+<h3 id="Bekerja-dan-Sinkronisasi-Pekerjaan"><a href="#Bekerja-dan-Sinkronisasi-Pekerjaan" class="headerlink" title="Bekerja dan Sinkronisasi Pekerjaan"></a>Bekerja dan Sinkronisasi Pekerjaan</h3><p>Istilah yang digunakan dalam git adalah add, commit, dan push. Berikut adalah contoh cara untuk sinkronisasi koding yang kita buat pada repositori lokal dengan repositori github.</p>
+<ol>
+<li>Buka direktori repositori yang barusan kita buat</li>
+<li>Dalam direktori tersebut buatlah sebuah file bernama <strong>readme.md</strong>, kemudian tuliskan teks di bawah ini serta Simpan dan buka kembali windows explore.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># Proyek Latihan Koding</div><div class="line"></div><div class="line">Proyek ini digunakan untuk latihan koding PHP dan menyimpannya pada github.</div></pre></td></tr></table></figure>
+<ol>
+<li>Buat satu lagi sebuah file dengan nama <strong>index.php</strong> dan tuliskan kode di bawah ini serta Simpan dan kali ini buka aplikasi github for windows. Terlihat kita memiliki <strong>2 uncommitted changes</strong>, artinya kita memiliki 2 file yang telah dirubah / ditambahkan tapi kita belum menyimpannya pada repositori lokal.</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	<span class="keyword">echo</span> <span class="string">"&lt;h1&gt;Hello World Biasa&lt;/h1&gt;"</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>Untuk menyimpannya isikan komentar commit pada isian <strong>Summary</strong> kemudian klik <strong>Commit to master</strong>.<br><img src="/images/github-4.jpg" alt=""></li>
+<li>Kita telah berhasil menyimpan pada repository lokal, selanjutnya klik tombol <strong>Publish</strong> yang ada di bagian kanan atas di bawah ikon gear.</li>
+<li>Saat pertama kali kita melakukan publish kita akan diminta untuk memasukkan <strong>Description</strong> dari repositori ini. Isikan deskripsi pada isian tersebut dan klik <strong>Publish [nama-repositori]</strong>.<blockquote>
+<p>Jangan mencentang pilihan private repository, karena pilihan tersebut hanya untuk akun berbayar. Jika kita centang maka kita akan diminta untuk meng-upgrade akun kita.</p>
+</blockquote>
+</li>
+<li>Tunggu sebentar hingga proses upload selesai (saat publish harus punya koneksi internet tentunya).</li>
+</ol>
+<p>Setelah proses upload berhasil, kita bisa mengecek hasil pekerjaan kita di github.com, seharusnya 2 file yang barusan kita buat sudah berhasil terunggah di repository github. Dan ya, sekarang kita tahu kode yang kita tuliskan pada <strong>readme.md</strong> menjadi dokumentasi resmi dari repository kita dengan menggunakan format <em><strong>markdown</strong></em> (penjelasan lebih lanjut tentang format markdown github dapat dibaca di <a href="https://help.github.com/articles/markdown-basics/" target="_blank" rel="external">halaman ini</a>).</p>
+<h2 id="Penutup"><a href="#Penutup" class="headerlink" title="Penutup"></a>Penutup</h2><p>Github bukan hanya sekedar tool untuk menyimpan koding secara online, tapi tujuan utamanya adalah tool untuk memudahkan kolaborasi koding antar beberapa programmer. Pada artikel ini hanya dijelaskan pengenalan menggunakan github saja, sedangkan penjelasan lebih lanjut tentang penggunaan github untuk <em>colaborative coding</em> akan dijelaskan pada artikel selanjutnya. Atau jika anda tidak sabar, silahkan baca artikel yang sangat istimewa dari nettuts yang berjudul <a href="http://code.tutsplus.com/articles/team-collaboration-with-github--net-29876" target="_blank" rel="external">Team Collaboration With GitHub</a>.</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://kaqfa.github.io/2015/09/tutorial-github-dasar-windows/" data-id="cix22y874000aq4xjcnfarx8l" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://kaqfa.github.io/2015/09/tutorial-github-dasar-windows/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kaqfa.github.io/2015/09/tutorial-github-dasar-windows/">Komentar</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2015/10/s-kom-yang-lebih-dari-lulusan-smk/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Lebih baru</strong>
+            <div class="article-nav-title">
+                
+                    S.Kom (yang) Lebih dari Lulusan SMK
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2015/08/array-dan-arraylist-dalam-java/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Lebih Tua</strong>
+            <div class="article-nav-title">Array dan ArrayList dalam Java</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">terbaru</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/kenapa-saya-memilih-hexo/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/hexo.png)" alt="Kenapa Saya Memilih Hexo" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/12/kenapa-saya-memilih-hexo/" class="title">Kenapa Saya Memilih Hexo</a></p>
+                            <p class="item-date"><time datetime="2016-12-22T11:38:41.000Z" itemprop="datePublished">2016-12-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/cara-mengecek-foto-hoax/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Google-and-Facebook-against-fake-news-sites.jpg)" alt="Cara Mengecek Foto Hoax" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Catatan/">Catatan</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a></p>
+                            <p class="item-title"><a href="/2016/11/cara-mengecek-foto-hoax/" class="title">Cara Mengecek Foto Hoax</a></p>
+                            <p class="item-date"><time datetime="2016-11-25T14:33:16.000Z" itemprop="datePublished">2016-11-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/04/renungan-hari-kartini/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/ra-kartinis-137th-birthday-5768297812328448-hp2x.jpg)" alt="Renungan Hari Kartini" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Catatan/">Catatan</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a></p>
+                            <p class="item-title"><a href="/2016/04/renungan-hari-kartini/" class="title">Renungan Hari Kartini</a></p>
+                            <p class="item-date"><time datetime="2016-04-21T17:05:33.000Z" itemprop="datePublished">2016-04-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/04/anehnya-rumah-sakit-sumber-waras/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Catatan/">Catatan</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a></p>
+                            <p class="item-title"><a href="/2016/04/anehnya-rumah-sakit-sumber-waras/" class="title">Anehnya Rumah Sakit Sumber Waras</a></p>
+                            <p class="item-date"><time datetime="2016-04-18T04:02:28.000Z" itemprop="datePublished">2016-04-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/04/1-abad-qudsiyyah-membumikan-gusjigang/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/12923378_791462264290967_1619522919362685572_n.jpg)" alt="1 Abad Qudsiyyah, Membumikan GusJiGang" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Inilah-Hidup/">Inilah Hidup</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Inilah-Hidup/Inspirasi/">Inspirasi</a></p>
+                            <p class="item-title"><a href="/2016/04/1-abad-qudsiyyah-membumikan-gusjigang/" class="title">1 Abad Qudsiyyah, Membumikan GusJiGang</a></p>
+                            <p class="item-date"><time datetime="2016-04-02T09:42:34.000Z" itemprop="datePublished">2016-04-02</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">kategori</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/">Akademis</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Algoritma/">Algoritma</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Algoritma/Pemrograman-Dasar/">Pemrograman Dasar</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Catatan/">Catatan</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Catatan/Pemrograman-Mobile/">Pemrograman Mobile</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Pemrograman-Berorientasi-Obyek/">Pemrograman Berorientasi Obyek</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Pemrograman-Dasar/">Pemrograman Dasar</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/">Algoritma</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/Catatan/">Catatan</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/Catatan/Inspirasi/">Inspirasi</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Basis-Data/">Basis Data</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/">Catatan</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Hi-Lite/">Hi-Lite</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/Inspirasi/">Inspirasi</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Tool-Pemrograman/">Tool Pemrograman</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/">Inilah Hidup</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/Inspirasi/">Inspirasi</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/Kata-Kata-Bijak/">Kata-Kata Bijak</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman-Mobile/">Pemrograman Mobile</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">arsip</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">Desember 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">Desember 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">Oktober 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">Agustus 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">Februari 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">Oktober 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">Juli 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">Desember 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">Desember 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">awan tag</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Scanner/" style="font-size: 10px;">Scanner</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/arraylist/" style="font-size: 10px;">arraylist</a> <a href="/tags/basis-data/" style="font-size: 10px;">basis data</a> <a href="/tags/belajar/" style="font-size: 10px;">belajar</a> <a href="/tags/blogging/" style="font-size: 10px;">blogging</a> <a href="/tags/collection/" style="font-size: 10px;">collection</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/curiculum-vitae/" style="font-size: 10px;">curiculum vitae</a> <a href="/tags/dasar-pemrograman/" style="font-size: 10px;">dasar pemrograman</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/framework/" style="font-size: 10px;">framework</a> <a href="/tags/gambar/" style="font-size: 10px;">gambar</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gusjigang/" style="font-size: 10px;">gusjigang</a> <a href="/tags/hasil/" style="font-size: 10px;">hasil</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hoax/" style="font-size: 10px;">hoax</a> <a href="/tags/input-console/" style="font-size: 10px;">input console</a> <a href="/tags/inspirasi/" style="font-size: 10px;">inspirasi</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/kartini/" style="font-size: 10px;">kartini</a> <a href="/tags/koding/" style="font-size: 10px;">koding</a> <a href="/tags/konfirmasi/" style="font-size: 10px;">konfirmasi</a> <a href="/tags/linearlayout/" style="font-size: 10px;">linearlayout</a> <a href="/tags/lulusan-IT/" style="font-size: 10px;">lulusan IT</a> <a href="/tags/makan/" style="font-size: 10px;">makan</a> <a href="/tags/motivasi/" style="font-size: 10px;">motivasi</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/orm/" style="font-size: 10px;">orm</a> <a href="/tags/pahlawan/" style="font-size: 10px;">pahlawan</a> <a href="/tags/pemrograman/" style="font-size: 20px;">pemrograman</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/programming/" style="font-size: 10px;">programming</a> <a href="/tags/proses/" style="font-size: 10px;">proses</a> <a href="/tags/qudsiyyah/" style="font-size: 10px;">qudsiyyah</a> <a href="/tags/rekayasa-perangkat-lunak/" style="font-size: 10px;">rekayasa perangkat lunak</a> <a href="/tags/rumah-sehat/" style="font-size: 10px;">rumah sehat</a> <a href="/tags/static-generator/" style="font-size: 10px;">static generator</a> <a href="/tags/sugarorm/" style="font-size: 10px;">sugarorm</a> <a href="/tags/sumber-waras/" style="font-size: 10px;">sumber waras</a> <a href="/tags/tidur/" style="font-size: 10px;">tidur</a> <a href="/tags/tutorial/" style="font-size: 15px;">tutorial</a> <a href="/tags/wanita/" style="font-size: 10px;">wanita</a> <a href="/tags/web-service/" style="font-size: 10px;">web service</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tautan</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2016 Fahri Firdausillah<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://kaqfa.github.io/2015/09/tutorial-github-dasar-windows/';
+        
+        this.page.identifier = 'tutorial-github-dasar-windows';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'fahri-github' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
