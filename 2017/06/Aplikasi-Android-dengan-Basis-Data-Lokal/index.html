@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang=id>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Aplikasi Android dengan Basis Data Lokal | Blog Pribadi Fahri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Aplikasi Keuangan Pribadi dengan Basis Data LokalAplikasi manajemen keuangan pribadi ini merupakan aplikasi sederhana yang terdiri dari beberapa bagian penting yaitu:
+
+Dashboard: berisi statistik dan">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aplikasi Android dengan Basis Data Lokal">
+<meta property="og:url" content="http://fahrifirdaus.web.id/2017/06/Aplikasi-Android-dengan-Basis-Data-Lokal/index.html">
+<meta property="og:site_name" content="Blog Pribadi Fahri">
+<meta property="og:description" content="Aplikasi Keuangan Pribadi dengan Basis Data LokalAplikasi manajemen keuangan pribadi ini merupakan aplikasi sederhana yang terdiri dari beberapa bagian penting yaitu:
+
+Dashboard: berisi statistik dan">
+<meta property="og:image" content="http://fahrifirdaus.web.id/./images/01_welcome_AS.png">
+<meta property="og:image" content="http://fahrifirdaus.web.id/./images/02_create_new_project.png">
+<meta property="og:image" content="http://fahrifirdaus.web.id/./images/04_select_activity.png">
+<meta property="og:image" content="http://fahrifirdaus.web.id/./images/05_name_activity.png">
+<meta property="og:image" content="http://fahrifirdaus.web.id/./images/06_run_app.png">
+<meta property="og:image" content="http://fahrifirdaus.web.id/./images/09_hello_world.png">
+<meta property="og:image" content="http://fahrifirdaus.web.id/./images/diagram.png">
+<meta property="og:image" content="http://fahrifirdaus.web.id/./images/08_create_activity.png">
+<meta property="og:image" content="http://fahrifirdaus.web.id/./images/10_TransactionListActivity.png">
+<meta property="og:image" content="http://fahrifirdaus.web.id/./images/12_new_java_class.png">
+<meta property="og:image" content="http://fahrifirdaus.web.id/./images/13_create_class_name.png">
+<meta property="og:updated_time" content="2017-06-05T08:33:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Aplikasi Android dengan Basis Data Lokal">
+<meta name="twitter:description" content="Aplikasi Keuangan Pribadi dengan Basis Data LokalAplikasi manajemen keuangan pribadi ini merupakan aplikasi sederhana yang terdiri dari beberapa bagian penting yaitu:
+
+Dashboard: berisi statistik dan">
+<meta name="twitter:image" content="http://fahrifirdaus.web.id/./images/01_welcome_AS.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Blog Pribadi Fahri" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Blog Pribadi Fahri</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/images/12924366_10154135895812577_7418501251525546598_n.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Cari" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'pos',
+            PAGES: 'Pages',
+            CATEGORIES: 'kategori',
+            TAGS: 'tag',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Cari" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/images/12924366_10154135895812577_7418501251525546598_n.jpg" />
+            <h2 id="name">Fahri Firdausillah</h2>
+            <h3 id="title">Developer &amp; Lecturer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Semarang, Indonesia</span>
+            <a id="follow" target="_blank" href="https://github.com/kaqfa/">IKUTI</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                26
+                <span>pos</span>
+            </div>
+            <div class="article-info-block">
+                60
+                <span>tag</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/kaqfa" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://twitter.com/kaqfa" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://facebook.com/kaqfa" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-Aplikasi-Android-dengan-Basis-Data-Lokal" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Aplikasi Android dengan Basis Data Lokal
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/06/Aplikasi-Android-dengan-Basis-Data-Lokal/">
+            <time datetime="2017-06-05T08:32:20.000Z" itemprop="datePublished">2017-06-05</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Catatan/">Catatan</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Catatan/Tool-Pemrograman/">Tool Pemrograman</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/github/">github</a>, <a class="tag-link" href="/tags/koding/">koding</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Aplikasi-Keuangan-Pribadi-dengan-Basis-Data-Lokal"><a href="#Aplikasi-Keuangan-Pribadi-dengan-Basis-Data-Lokal" class="headerlink" title="Aplikasi Keuangan Pribadi dengan Basis Data Lokal"></a>Aplikasi Keuangan Pribadi dengan Basis Data Lokal</h1><p>Aplikasi manajemen keuangan pribadi ini merupakan aplikasi sederhana yang terdiri dari beberapa bagian penting yaitu:</p>
+<ul>
+<li><strong>Dashboard</strong>: berisi statistik dan informasi singkat tentang kondisi keuangan</li>
+<li><strong>List Transaksi</strong>: catatan transaksi pemasukan dan pengeluaran yang telah dilakukan</li>
+<li><strong>Form Transaksi</strong>: digunakan untuk menambahkan data catatan transaksi</li>
+<li><strong>Detail Transaksi</strong>: digunakan untuk menampilkan data detail dari tiap transaksi dan tombol untuk menghapus transaksi tersebut</li>
+</ul>
+<h2 id="Inisialisasi-Aplikasi"><a href="#Inisialisasi-Aplikasi" class="headerlink" title="Inisialisasi Aplikasi"></a>Inisialisasi Aplikasi</h2><p>Langkah pertama yang dilakukan dalam pengembangan aplikasi adalah membuat proyek dengan Android Studio. Berikut adalah langkah pembuatan proyek untuk aplikasi kita:</p>
+<ol>
+<li>Pilih menu <strong>New Apllication</strong><br><img src="./images/01_welcome_AS.png" alt="New Application"></li>
+<li>Selanjutnya isikan <strong>Application Name</strong> dengan <code>Pengurus Uang</code> dan <strong>Domain Name</strong> dengan <code>app.manajemenuang.net</code>. Jangan lupa untuk memilih alamat direktori sesuai dengan yang kita inginkan.<br><img src="./images/02_create_new_project.png" alt=""></li>
+<li>Selanjutnya kita akan diminta untuk memilih template dari <strong>Activity</strong> yang akan digunakan, di sini sebaiknya kita gunakan <strong>Basic Activity</strong> untuk memudahkan pembuatan aplikasi nanti.<br><img src="./images/04_select_activity.png" alt=""></li>
+<li>Terakhir biarkan nama activity utamanya <code>MainActivity</code> begitu juga nama file layoutnya <code>activity_main.xml</code>, Kemudian klik finish.<br><img src="./images/05_name_activity.png" alt=""></li>
+</ol>
+<p>Pada tahap ini kita sudah memiliki kerangka aplikasi yang sudah siap di-<em>compile</em> dan dijalankan. Untuk menguji coba aplikasi dasar tersebut, kita bisa mengklik tombol Run. Selanjutnya Android Studio akan memerlukan beberapa saat untuk melakukan kompilasi, membuka AVD (jika belum dijalankan sebelumnya) dan mengirim hasil aplikasi yang kita buat ke Device atau Virtual Device yang dipilih.</p>
+<p><img src="./images/06_run_app.png" alt=""></p>
+<p>Ketika proses kompilasi selesai, kita akan mendapatkan hasil sebagaimana ditunjukkan pada gambar di bawah ini. Biarkan AVD tetap berjalan (untuk menghemat waktu starting AVD) dan kita lanjutkan ke langkah pengembangan proyek selanjutnya.</p>
+<p><img src="./images/09_hello_world.png" alt=""></p>
+<h2 id="Membuat-Activity-amp-Layout"><a href="#Membuat-Activity-amp-Layout" class="headerlink" title="Membuat Activity &amp; Layout"></a>Membuat Activity &amp; Layout</h2><p>Setelah project dibuat dan bisa berjalan dengan baik, saatnya kita menambahkan komponen lain ke dalam project kita. Rencananya aplikasi yang akan kita buat memiliki beberapa tampilan dengan workflow sebagaimana ditampilkan pada gambar di bawah ini.</p>
+<p><img src="./images/diagram.png" alt=""></p>
+<p>Berdasarkan gambar tersebut, berarti kita memerlukan paling tidak 4 buah antarmuka tampilan yang dalam pemrograman Android disebut sebagai Activity. Saat ini kita sudah mendapatkan 1 tampilan sebagai halaman utama dan halaman yang pertama kali dibuka ketika aplikasi dijalankan, berarti kita memerlukan tambahan 3 Activity lagi.</p>
+<h3 id="TransactionListActivity"><a href="#TransactionListActivity" class="headerlink" title="TransactionListActivity"></a>TransactionListActivity</h3><ol>
+<li>Klik kanan pada direktori java project, kemudian pilih menu <strong>New &gt; Activity &gt; Empty Activity</strong><br><img src="./images/08_create_activity.png" alt=""></li>
+<li>Pada inputan <strong>Activity Class</strong> inputkan <code>TransactionListActivity</code>, dan pastikan pada <strong>Layout file</strong> bernilai <code>activity_transaction_list.xml</code><br><img src="./images/10_TransactionListActivity.png" alt=""></li>
+<li>Kemudian setelah Android Studio selesai men-<em>generate</em> file activity java dan layout, isikan kode layout berikut pada pada file <code>activity_transaction_list.xml</code></li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">tools:context</span>=<span class="string">"id.co.uang.urusanuang.TransactionListActivity"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">ListView</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/list_transactions"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>/&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="TransactionFormActivity"><a href="#TransactionFormActivity" class="headerlink" title="TransactionFormActivity"></a>TransactionFormActivity</h3><ol>
+<li>Klik kanan pada direktori java project, kemudian pilih menu <strong>New &gt; Activity &gt; Empty Activity</strong></li>
+<li>Pada inputan <strong>Activity Class</strong> inputkan <code>TransactionFormActivity</code>, dan pastikan pada <strong>Layout file</strong> bernilai <code>activity_transaction_form.xml</code></li>
+<li>Kemudian setelah Android Studio selesai men-<em>generate</em> file activity java dan layout, isikan kode layout berikut pada pada file <code>activity_transaction_form.xml</code></li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_margin</span>=<span class="string">"15dp"</span></div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">    <span class="attr">tools:context</span>=<span class="string">"us.firda.fahri.pengurusuang.TransactionFormActivity"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"Nama Transaksi"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">EditText</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/edt_name"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>/&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"Jenis Transaksi"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">Spinner</span></span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/spn_type"</span>/&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"Jumlah"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">EditText</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/edt_amount"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:inputType</span>=<span class="string">"number"</span>/&gt;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"Keterangan"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">EditText</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/edt_description"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:inputType</span>=<span class="string">"text"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">Button</span></span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"Simpan"</span></div><div class="line">        <span class="attr">android:onClick</span>=<span class="string">"saveTransaction"</span>/&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Khusus untuk form, karena kita menggunakan Spinner (dropdown selection) kita harus menambahkan kode berikut pada <code>TransactionFormActivity</code> agar dapat berjalan dengan baik:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TransactionFormActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    Spinner spnType;</div><div class="line">    EditText edtName;</div><div class="line">    EditText edtAmount;</div><div class="line">    EditText edtDescription;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_transaction_form);</div><div class="line"></div><div class="line">        spnType = (Spinner) findViewById(R.id.spn_type);</div><div class="line">        edtName = (EditText) findViewById(R.id.edt_name);</div><div class="line">        edtAmount = (EditText) findViewById(R.id.edt_amount);</div><div class="line">        edtDescription = (EditText) findViewById(R.id.edt_description);</div><div class="line"></div><div class="line">        String type [] = &#123;<span class="string">"Pengeluaran"</span>, <span class="string">"Pemasukan"</span>&#125;;</div><div class="line">        ArrayAdapter&lt;String&gt; adapter = <span class="keyword">new</span> ArrayAdapter&lt;String&gt;(<span class="keyword">this</span>,</div><div class="line">                android.R.layout.simple_spinner_item, type);</div><div class="line">        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);</div><div class="line">        spnType.setAdapter(adapter);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="TransactionDetailActivity"><a href="#TransactionDetailActivity" class="headerlink" title="TransactionDetailActivity"></a>TransactionDetailActivity</h3><ol>
+<li>Klik kanan pada direktori java project, kemudian pilih menu <strong>New &gt; Activity &gt; Empty Activity</strong></li>
+<li>Pada inputan <strong>Activity Class</strong> inputkan <code>TransactionDetailActivity</code>, dan pastikan pada <strong>Layout file</strong> bernilai <code>activity_transaction_detail.xml</code></li>
+<li>Kemudian setelah Android Studio selesai men-<em>generate</em> file activity java dan layout, isikan kode layout berikut pada pada file <code>activity_transaction_detail.xml</code></li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_margin</span>=<span class="string">"15dp"</span></div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">    <span class="attr">tools:context</span>=<span class="string">"us.firda.fahri.pengurusuang.TransactionDetailActivity"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/txt_name"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"20dp"</span></div><div class="line">        <span class="attr">android:textSize</span>=<span class="string">"24sp"</span></div><div class="line">        <span class="attr">android:textStyle</span>=<span class="string">"bold"</span></div><div class="line">        <span class="attr">android:textAlignment</span>=<span class="string">"center"</span></div><div class="line">        <span class="attr">android:textColor</span>=<span class="string">"@color/colorPrimaryDark"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"Nama Transaksi"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">LinearLayout</span></span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"10dp"</span></div><div class="line">        <span class="attr">android:layout_marginBottom</span>=<span class="string">"10dp"</span></div><div class="line">        <span class="attr">android:padding</span>=<span class="string">"10dp"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">            <span class="attr">android:id</span>=<span class="string">"@+id/txt_type"</span></div><div class="line">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">            <span class="attr">android:layout_weight</span>=<span class="string">"1"</span></div><div class="line">            <span class="attr">android:textSize</span>=<span class="string">"18sp"</span></div><div class="line">            <span class="attr">android:textStyle</span>=<span class="string">"bold"</span></div><div class="line">            <span class="attr">android:text</span>=<span class="string">"Pengeluaran"</span>/&gt;</div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">            <span class="attr">android:id</span>=<span class="string">"@+id/txt_amount"</span></div><div class="line">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">            <span class="attr">android:textSize</span>=<span class="string">"18sp"</span></div><div class="line">            <span class="attr">android:layout_weight</span>=<span class="string">"1"</span></div><div class="line">            <span class="attr">android:textStyle</span>=<span class="string">"bold"</span></div><div class="line">            <span class="attr">android:textAlignment</span>=<span class="string">"textEnd"</span></div><div class="line">            <span class="attr">android:layout_gravity</span>=<span class="string">"end"</span></div><div class="line">            <span class="attr">android:text</span>=<span class="string">"20.000"</span>/&gt;</div><div class="line">    <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/txt_description"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:textSize</span>=<span class="string">"18sp"</span></div><div class="line">        <span class="attr">android:padding</span>=<span class="string">"10dp"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"Deskripsi agak panjang dari transaksi yang dilakukan"</span>/&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">Button</span></span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:onClick</span>=<span class="string">"delTransaction"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"Hapus Transaksi"</span>/&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="MainActivity"><a href="#MainActivity" class="headerlink" title="MainActivity"></a>MainActivity</h3><p>Khusus untuk <code>MainActivity</code> kita tidak perlu membuatnya, karena dari awal sudah dibuatkan oleh Android Studio saat kita membuat proyek. Yang perlu dilakukan adalah menambahkan koding pada <code>content_main.xml</code> menjadi seperti di bawah ini:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">app:layout_behavior</span>=<span class="string">"@string/appbar_scrolling_view_behavior"</span></div><div class="line">    <span class="attr">tools:context</span>=<span class="string">"us.firda.fahri.pengurusuang.MainActivity"</span></div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">    <span class="attr">android:layout_margin</span>=<span class="string">"15dp"</span></div><div class="line">    <span class="attr">tools:showIn</span>=<span class="string">"@layout/activity_main"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"Aplikasi Manajemen Keuangan"</span></div><div class="line">        <span class="attr">android:textAlignment</span>=<span class="string">"center"</span></div><div class="line">        <span class="attr">android:textSize</span>=<span class="string">"30sp"</span></div><div class="line">        <span class="attr">android:textStyle</span>=<span class="string">"bold"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"Saldo Terakhir"</span></div><div class="line">        <span class="attr">android:textAlignment</span>=<span class="string">"center"</span></div><div class="line">        <span class="attr">android:textSize</span>=<span class="string">"18sp"</span></div><div class="line">        <span class="attr">android:textStyle</span>=<span class="string">"bold"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"20dp"</span>/&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/txt_saldo"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"2.500.000"</span></div><div class="line">        <span class="attr">android:textAlignment</span>=<span class="string">"center"</span></div><div class="line">        <span class="attr">android:textSize</span>=<span class="string">"24sp"</span></div><div class="line">        <span class="attr">android:textStyle</span>=<span class="string">"bold"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"Pengeluaran Terkecil"</span></div><div class="line">        <span class="attr">android:textAlignment</span>=<span class="string">"center"</span></div><div class="line">        <span class="attr">android:textSize</span>=<span class="string">"18sp"</span></div><div class="line">        <span class="attr">android:textStyle</span>=<span class="string">"bold"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"20dp"</span>/&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/txt_kecil"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"2.500.000"</span></div><div class="line">        <span class="attr">android:textAlignment</span>=<span class="string">"center"</span></div><div class="line">        <span class="attr">android:textSize</span>=<span class="string">"24sp"</span></div><div class="line">        <span class="attr">android:textStyle</span>=<span class="string">"bold"</span></div><div class="line">        <span class="attr">tools:layout_editor_absoluteX</span>=<span class="string">"8dp"</span></div><div class="line">        <span class="attr">tools:layout_editor_absoluteY</span>=<span class="string">"299dp"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"Pengeluaran Terbesar"</span></div><div class="line">        <span class="attr">android:textAlignment</span>=<span class="string">"center"</span></div><div class="line">        <span class="attr">android:textSize</span>=<span class="string">"18sp"</span></div><div class="line">        <span class="attr">android:textStyle</span>=<span class="string">"bold"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"20dp"</span>/&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/txt_besar"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"2.500.000"</span></div><div class="line">        <span class="attr">android:textAlignment</span>=<span class="string">"center"</span></div><div class="line">        <span class="attr">android:textSize</span>=<span class="string">"24sp"</span></div><div class="line">        <span class="attr">android:textStyle</span>=<span class="string">"bold"</span></div><div class="line">        <span class="attr">tools:layout_editor_absoluteX</span>=<span class="string">"8dp"</span></div><div class="line">        <span class="attr">tools:layout_editor_absoluteY</span>=<span class="string">"223dp"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">Button</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/btn_list_transactions"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"Tampilkan Semua Transaksi"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"20dp"</span> /&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Agar aplikasi dapat melakukan navigasi ke activity lain dengan baik, tambahkan kode berikut pada <code>MainActivity</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="comment">// ...</span></div><div class="line"></div><div class="line">        fab.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">                <span class="comment">// hapus semua code di dalam fungsi ini, dan ganti dengan kode berikut</span></div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(getBaseContext(), TransactionFormActivity.class);</div><div class="line">                startActivity(intent);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        <span class="comment">// tambahkan juga kode ini</span></div><div class="line">        Button btnListTransactions = (Button) findViewById(R.id.btn_list_transactions);</div><div class="line">        btnListTransactions.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(getBaseContext(), TransactionListActivity.class);</div><div class="line">                startActivity(intent);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Membuat-Model"><a href="#Membuat-Model" class="headerlink" title="Membuat Model"></a>Membuat Model</h2><p>Langkah selanjutnya setelah kita membuat tampilan untuk aplikasi adalah membuat class model yang merupakan representasi dari tabel basis data SQLite yang akan kita gunakan. Pada proyek ini kita akan menyimpan data transaksi berupa nama transaksi, jenis transaksi (pemasukan/pengeluaran), jumlah, dan juga keterangan.</p>
+<p>Class model yang dimaksud adalah standard class Java yang diberikan attribute dan method untuk keperluan manipulasi data. Langkah pembuatannya adalah sebagai berikut:</p>
+<ol>
+<li>Klik kanan pada direktori Java kemudian pilih menu <strong>New &gt; Class</strong><br><img src="./images/12_new_java_class.png" alt=""></li>
+<li>Isikan <code>Transaction</code> pada inputan <strong>Class Name</strong>, biarkan inputan lain, dan klik <strong>Finish</strong><br><img src="./images/13_create_class_name.png" alt=""></li>
+<li>Selanjutnya pada <code>Transaksi.java</code> isikan koding berikut:</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Transaction</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PENGELUARAN = <span class="number">1</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PEMASUKAN = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String id;</div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> type;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> amount;</div><div class="line">    <span class="keyword">private</span> String description;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Transaction</span><span class="params">(String id, String name, <span class="keyword">int</span> type, <span class="keyword">int</span> amount, String description)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.id = id;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">        <span class="keyword">this</span>.type = type;</div><div class="line">        <span class="keyword">this</span>.amount = amount;</div><div class="line">        <span class="keyword">this</span>.description = description;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getId</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(String id)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.id = id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getType</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> type;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setType</span><span class="params">(<span class="keyword">int</span> type)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.type = type;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAmount</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> amount;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAmount</span><span class="params">(<span class="keyword">int</span> amount)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.amount = amount;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescription</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> description;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDescription</span><span class="params">(String description)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.description = description;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">stringType</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.type == PEMASUKAN)</div><div class="line">            <span class="keyword">return</span> <span class="string">"Pemasukan"</span>;</div><div class="line">        <span class="keyword">else</span></div><div class="line">            <span class="keyword">return</span> <span class="string">"Pengeluaran"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name+<span class="string">" ["</span>+<span class="keyword">this</span>.stringType()+<span class="string">"] : "</span>+<span class="keyword">this</span>.amount;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Menampilkan-Transaksi-dengan-ListView-dan-DetailView"><a href="#Menampilkan-Transaksi-dengan-ListView-dan-DetailView" class="headerlink" title="Menampilkan Transaksi dengan ListView dan DetailView"></a>Menampilkan Transaksi dengan ListView dan DetailView</h2><p>Setelah membuat <code>class Transaksi</code> saatnya kita membuat ListView untuk menampilkan data <em>dummy</em> (bukan data beneran). Untuk melakukannya kita harus menambahkan fungsi atribut <code>ArrayList&lt;Transaksi&gt; listTrans</code> dan method <code>void dummyData()</code> pada <code>class TransactionListActivity</code> seperti ditunjukkan pada koding berikut:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TransactionListActivty</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ArrayList&lt;Transaction&gt; transList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dummyData</span><span class="params">()</span></span>&#123;</div><div class="line">        transList.add(<span class="keyword">new</span> Transaction(<span class="string">"1"</span>, <span class="string">"Makan malam"</span>,</div><div class="line">                Transaction.PENGELUARAN, <span class="number">20000</span>, <span class="string">"Makan malam sendirian"</span>));</div><div class="line">        transList.add(<span class="keyword">new</span> Transaction(<span class="string">"2"</span>, <span class="string">"Action Figure"</span>,</div><div class="line">                Transaction.PENGELUARAN, <span class="number">1200000</span>, <span class="string">"Action figure Sumanto"</span>));</div><div class="line">        transList.add(<span class="keyword">new</span> Transaction(<span class="string">"3"</span>, <span class="string">"Gaji Bulanan"</span>,</div><div class="line">                Transaction.PEMASUKAN, <span class="number">10000000</span>, <span class="string">"Gaji reguler tiap bulan"</span>));</div><div class="line">        transList.add(<span class="keyword">new</span> Transaction(<span class="string">"4"</span>, <span class="string">"Bonus Lembur"</span>,</div><div class="line">                Transaction.PEMASUKAN, <span class="number">5000000</span>, <span class="string">"Lemburan penelitian bersama"</span>));</div><div class="line">        transList.add(<span class="keyword">new</span> Transaction(<span class="string">"5"</span>, <span class="string">"Oleh-oleh kampung"</span>,</div><div class="line">                Transaction.PENGELUARAN, <span class="number">2000000</span>, <span class="string">"Beli oleh-oleh buat keluarga"</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Setelah menambahkan attribute dan method tersebut, kita perlu memanggil method <code>dummyData</code> pada method <code>ocCreate()</code> sebagaimana ditunjukkan pada koding di bawah ini:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TransactionListActivty</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line"></div><div class="line">    ArrayAdapter adapter;</div><div class="line">    ListView transactionList;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="comment">// ...</span></div><div class="line"></div><div class="line">        transactionList = (ListView) findViewById(R.id.list_transactions);</div><div class="line"></div><div class="line">        dummyData();</div><div class="line">        adapter = <span class="keyword">new</span> ArrayAdapter(<span class="keyword">this</span>, android.R.layout.simple_list_item_1, transList);</div><div class="line">        transactionList.setAdapter(adapter);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Menampilkan-Detail-Satu-Data-Pada-Detail-View"><a href="#Menampilkan-Detail-Satu-Data-Pada-Detail-View" class="headerlink" title="Menampilkan Detail Satu Data Pada Detail View"></a>Menampilkan Detail Satu Data Pada Detail View</h3><p>Setelah data ditampilkan pada ListView, sekarang kita akan menampilkan data lengkap sebuah transaksi dengan menggunakan DetailView. Untuk melakukannya yang pertama kali dilakukan adalan menambahkan aksi ketika ada salah satu item list yang disentuh (atau diklik) dengan menambahkan <code>onItemClickListener</code> pada listview:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TransactionListActivty</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="comment">// ...</span></div><div class="line"></div><div class="line">        transactionList.setOnItemClickListener(<span class="keyword">new</span> AdapterView.OnItemClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onItemClick</span><span class="params">(AdapterView&lt;?&gt; parent, View view, <span class="keyword">int</span> position, <span class="keyword">long</span> id)</span> </span>&#123;</div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(getBaseContext(),</div><div class="line">                        TransactionDetailActivity.class);</div><div class="line">                intent.putExtra(<span class="string">"transaction.detail"</span>, transList.get(position));</div><div class="line">                startActivity(intent);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Terakhir kita juga harus mengubah <code>TransactionDetailActivity</code> untuk dapat menerima data dan menampilkan sesuai dengan layout yang telah dibuat sebelumnya:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TransactionDetailActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Transaction transaction;</div><div class="line">    <span class="keyword">private</span> TextView txtName;</div><div class="line">    <span class="keyword">private</span> TextView txtType;</div><div class="line">    <span class="keyword">private</span> TextView txtAmount;</div><div class="line">    <span class="keyword">private</span> TextView txtDescription;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_transaction_detail);</div><div class="line"></div><div class="line">        txtName = (TextView) findViewById(R.id.txt_name);</div><div class="line">        txtType = (TextView) findViewById(R.id.txt_type);</div><div class="line">        txtAmount = (TextView) findViewById(R.id.txt_amount);</div><div class="line">        txtDescription = (TextView) findViewById(R.id.txt_description);</div><div class="line"></div><div class="line">        Intent intent = getIntent();</div><div class="line">        transaction = (Transaction) intent.getSerializableExtra(<span class="string">"transaction.detail"</span>);</div><div class="line"></div><div class="line">        txtName.setText(transaction.getName());</div><div class="line">        txtType.setText(transaction.stringType());</div><div class="line">        txtAmount.setText(Integer.toString(transaction.getAmount()));</div><div class="line">        txtDescription.setText(transaction.getDescription());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Menambahkan-Contract-amp-DBHelper"><a href="#Menambahkan-Contract-amp-DBHelper" class="headerlink" title="Menambahkan Contract &amp; DBHelper"></a>Menambahkan Contract &amp; DBHelper</h2><p>Kita telah berhasil menampilkan data uji coba pada listView, selanjutnya kita tampilan tersebut kita ganti dengan koneksi ke database lokal.</p>
+<p>Pada Android koneksi database lokal menggunakan <strong>SQLite</strong> yang merupakan database lokal tanpa server (atau istilahnya adalah <em>embedded database</em>). Karena modelnya berbeda dengan basis data berbasis server (serperti MySQL), model koneksi dan manipulasi SQLite juga berbeda. Kongkritnya dalam pemrograman Android, untuk dapat melakukan akses SQLite kita perlu menyiapkan 2 hal, yaitu class Database Contract dan class Database Helper.</p>
+<h3 id="Class-Database-Contract"><a href="#Class-Database-Contract" class="headerlink" title="Class Database Contract"></a>Class Database Contract</h3><p>Contract class adalah Java Class standar yang digunakan untuk mendefinisikan konstanta dan beberapa query yang berhubungan dengan pembentukan dan pengaksesan basis tabel. Untuk membuat table contract untuk aplikasi yang kita kerjakan, kita bisa memodifikasi class model <code>Transaction</code> yang sudah kita buat sebelumnya menjadi seperti di bawah ini:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Transaction</span> <span class="keyword">implements</span> <span class="title">Serializable</span>, <span class="title">BaseColumns</span> </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String TABLE_NAME = <span class="string">"transactions"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String COL_NAME = <span class="string">"name"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String COL_TYPE = <span class="string">"type"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String COL_AMOUNT = <span class="string">"amount"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String COL_DESCRIPTION = <span class="string">"description"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String SQL_CREATE = <span class="string">"create table transactions "</span> +</div><div class="line">                                    <span class="string">"(_id integer primary key autoincrement, "</span>+</div><div class="line">                                    <span class="string">"name text, type integer, amount integer, description text)"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String SQL_DELETE = <span class="string">"drop table if exists transactions"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Class-untuk-Database-Helper"><a href="#Class-untuk-Database-Helper" class="headerlink" title="Class untuk Database Helper"></a>Class untuk Database Helper</h3><p>Class kedua yang harus kita siapkan untuk akses database adalah class Helper, class ini berfungsi untuk mengeksekusi perintah-perintah SQL baik yang berhubungan dengan struktur tabel maupun yang berhubungan dengan data tabel. Class Helper yang kita gunakan untuk aplikasi kita adalah berikut:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DatabaseHelper</span> <span class="keyword">extends</span> <span class="title">SQLiteOpenHelper</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DB_NAME = <span class="string">"keuangan.db"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DB_VERSION = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> SQLiteDatabase db;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DatabaseHelper</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, DB_NAME, <span class="keyword">null</span>, DB_VERSION);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(SQLiteDatabase db)</span> </span>&#123;</div><div class="line">        db.execSQL(Transaction.SQL_CREATE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpgrade</span><span class="params">(SQLiteDatabase db, <span class="keyword">int</span> oldVersion, <span class="keyword">int</span> newVersion)</span> </span>&#123;</div><div class="line">        db.execSQL(Transaction.SQL_DELETE);</div><div class="line">        onCreate(db);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertTransaction</span><span class="params">(String name, <span class="keyword">int</span> type, <span class="keyword">int</span> amount, String description)</span></span>&#123;</div><div class="line">        db = getWritableDatabase();</div><div class="line">        ContentValues values = <span class="keyword">new</span> ContentValues();</div><div class="line">        values.put(Transaction.COL_NAME, name);</div><div class="line">        values.put(Transaction.COL_TYPE, type);</div><div class="line">        values.put(Transaction.COL_AMOUNT, amount);</div><div class="line">        values.put(Transaction.COL_DESCRIPTION, description);</div><div class="line"></div><div class="line">        db.insert(Transaction.TABLE_NAME, <span class="keyword">null</span>, values);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> List&lt;Transaction&gt; <span class="title">getTransactions</span><span class="params">()</span></span>&#123;</div><div class="line">        db = getReadableDatabase();</div><div class="line">        List&lt;Transaction&gt; transactions = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"></div><div class="line">        Cursor cursor = db.rawQuery(<span class="string">"select * from "</span>+Transaction.TABLE_NAME+</div><div class="line">                                    <span class="string">" order by "</span>+Transaction._ID, <span class="keyword">null</span>);</div><div class="line"></div><div class="line">        Transaction newTrans;</div><div class="line">        <span class="keyword">try</span>&#123;</div><div class="line">            <span class="keyword">while</span> (cursor.moveToNext())&#123;</div><div class="line">                newTrans = <span class="keyword">new</span> Transaction(Long.toString(cursor.getLong(<span class="number">0</span>)), cursor.getString(<span class="number">1</span>),</div><div class="line">                        cursor.getInt(<span class="number">2</span>), cursor.getInt(<span class="number">3</span>), cursor.getString(<span class="number">4</span>));</div><div class="line">                transactions.add(newTrans);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">finally</span> &#123;</div><div class="line">            cursor.close();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> transactions;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteTransaction</span><span class="params">(Transaction transaction)</span></span>&#123;</div><div class="line">        db = getWritableDatabase();</div><div class="line"></div><div class="line">        db.delete(Transaction.TABLE_NAME, Transaction._ID+<span class="string">" = ?"</span>,</div><div class="line">                <span class="keyword">new</span> String[]&#123;transaction.getId()&#125;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Menggabungkan-Semuanya-pada-Aplikasi"><a href="#Menggabungkan-Semuanya-pada-Aplikasi" class="headerlink" title="Menggabungkan Semuanya pada Aplikasi"></a>Menggabungkan Semuanya pada Aplikasi</h2><p>Setelah menyelesaikan kedua class untuk membantu koneksi basis data, selanjutnya kita akan menggunakan class tersebut pada aplikasi kita. Pertama kita akan menggunakannya untuk menginputkan data melalui Form, kemudian menampilkan data melalui MainActivity dan ListView, dan terakhir menggunakannya untuk menghapus data pada tampilan detail.</p>
+<h3 id="Input-Data-Melalui-Form"><a href="#Input-Data-Melalui-Form" class="headerlink" title="Input Data Melalui Form"></a>Input Data Melalui Form</h3><p>Pada bagian pembentukan activity kita sudah membuat desain untuk form-nya, sehingga yang perlu dilakukan saat ini adalah menghubungkan tampilan form tersebut ke dalam logic Java-nya. Berikut adalah modifikasi class <code>FormTransactionActivity</code> untuk menyimpan data ke dalam basis data lokal.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TransactionFormActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    Spinner spnType;</div><div class="line">    EditText edtName;</div><div class="line">    EditText edtAmount;</div><div class="line">    EditText edtDescription;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">saveTransaction</span><span class="params">(View view)</span></span>&#123;</div><div class="line">        String name = edtName.getText().toString();</div><div class="line">        <span class="keyword">int</span> type = spnType.getSelectedItemPosition()+<span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> amount = Integer.parseInt(edtAmount.getText().toString());</div><div class="line">        String description = edtDescription.getText().toString();</div><div class="line"></div><div class="line">        DatabaseHelper database = <span class="keyword">new</span> DatabaseHelper(<span class="keyword">this</span>);</div><div class="line">        database.insertTransaction(name, type, amount, description);</div><div class="line"></div><div class="line">        Toast.makeText(<span class="keyword">this</span>, <span class="string">"Transaksi "</span>+name+<span class="string">" berhasil disimpan"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        finish();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Membaca-Data-dan-Menampilkan-Pada-Main"><a href="#Membaca-Data-dan-Menampilkan-Pada-Main" class="headerlink" title="Membaca Data dan Menampilkan Pada Main"></a>Membaca Data dan Menampilkan Pada Main</h3><p>Setelah menginputkan data di form, langkah selanjutnya adalah menampilkan 5 data terbaru di Dashboard dan menampilkan semua data di ListView. Karena kita telah membuat layout pada bagian sebelumnya, dan bahkan menampilkan list dengan menggunakan ArrayList, pada bagian ini kita hanya perlu mengganti bagian ArrayList untuk mengambil data dari basis data.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    DatabaseHelper dbHelper = <span class="keyword">new</span> DatabaseHelper(<span class="keyword">this</span>);</div><div class="line">    ArrayList transList;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">updateStat</span><span class="params">(ArrayList&lt;Transaction&gt; transactions)</span></span>&#123;</div><div class="line">        TextView txtSaldo = (TextView) findViewById(R.id.txt_saldo);</div><div class="line">        TextView txtKecil = (TextView) findViewById(R.id.txt_kecil);</div><div class="line">        TextView txtBesar = (TextView) findViewById(R.id.txt_besar);</div><div class="line"></div><div class="line">        <span class="keyword">int</span> saldo = <span class="number">0</span>, besar = <span class="number">0</span>, kecil = <span class="number">0</span>;</div><div class="line">        Transaction trans;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (transactions.size() &gt; <span class="number">0</span>)</div><div class="line">            besar = kecil = transactions.get(<span class="number">0</span>).getAmount();</div><div class="line"></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; transactions.size(); i++)&#123;</div><div class="line">            trans = transactions.get(i);</div><div class="line">            <span class="keyword">if</span> (trans.getType() == <span class="number">1</span>)&#123;</div><div class="line">                saldo -= trans.getAmount();</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                saldo += trans.getAmount();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (trans.getAmount() &gt; besar)</div><div class="line">                besar = trans.getAmount();</div><div class="line">            <span class="keyword">if</span>(trans.getAmount() &lt; kecil)</div><div class="line">                kecil = trans.getAmount();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        txtSaldo.setText(Integer.toString(saldo));</div><div class="line">        txtBesar.setText(Integer.toString(besar));</div><div class="line">        txtKecil.setText(Integer.toString(kecil));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onResume();</div><div class="line"></div><div class="line">        transList = (ArrayList&lt;Transaction&gt;) dbHelper.getTransactions();</div><div class="line">        updateStat(transList);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Menampilkan-semua-data-pada-ListView"><a href="#Menampilkan-semua-data-pada-ListView" class="headerlink" title="Menampilkan semua data pada ListView"></a>Menampilkan semua data pada ListView</h3><p>Untuk menampilkan semua data pada ListView, kita perlu membuat method baru untuk mengambil data dari database dan memanggilnya pada saat Activity dibuat. Koding lengkapnya ditunjukkan di bawah ini:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TransactionListActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ArrayList&lt;Transaction&gt; transList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    ArrayAdapter adapter;</div><div class="line">    ListView transactionList;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onResume();</div><div class="line">        DatabaseHelper dbHelper = <span class="keyword">new</span> DatabaseHelper(<span class="keyword">this</span>);</div><div class="line">        transList = (ArrayList&lt;Transaction&gt;) dbHelper.getTransactions();</div><div class="line">        adapter = <span class="keyword">new</span> ArrayAdapter(<span class="keyword">this</span>, android.R.layout.simple_list_item_1, transList);</div><div class="line">        transactionList.setAdapter(adapter);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Menghapus-Data-Pada-Detail"><a href="#Menghapus-Data-Pada-Detail" class="headerlink" title="Menghapus Data Pada Detail"></a>Menghapus Data Pada Detail</h3><p>Proses penghapusan data pada detail memerlukan <code>_id</code>, untuk memudahkan kita akan menambahkan atribut <code>trans_id</code> untuk menyimpan data tersebut dan fungsi <code>hapus</code> yang dipanggil ketika tombol hapus ditekan diisi dengan kode berikut:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TransactionDetailActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delTransaction</span><span class="params">(View view)</span></span>&#123;</div><div class="line">        DatabaseHelper dbHelper = <span class="keyword">new</span> DatabaseHelper(<span class="keyword">this</span>);</div><div class="line">        dbHelper.deleteTransaction(transaction);</div><div class="line">        finish();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Membuat-Activity-Login-amp-Registrasi"><a href="#Membuat-Activity-Login-amp-Registrasi" class="headerlink" title="Membuat Activity Login &amp; Registrasi"></a>Membuat Activity Login &amp; Registrasi</h2><p>Step by Step membuat halaman login dan registrasi, termasuk peringatan jika login gagal.</p>
+<h3 id="Membuat-Halaman-Registrasi-dan-Halaman-Login"><a href="#Membuat-Halaman-Registrasi-dan-Halaman-Login" class="headerlink" title="Membuat Halaman Registrasi dan Halaman Login"></a>Membuat Halaman Registrasi dan Halaman Login</h3><h2 id="Otentikasi-Sederhana-Aplikasi"><a href="#Otentikasi-Sederhana-Aplikasi" class="headerlink" title="Otentikasi Sederhana Aplikasi"></a>Otentikasi Sederhana Aplikasi</h2><p>Membuat DBHelper User untuk registrasi dan login aplikasi</p>
+<h2 id="Menambahkan-Tabel-dan-Relasi-Tabel"><a href="#Menambahkan-Tabel-dan-Relasi-Tabel" class="headerlink" title="Menambahkan Tabel dan Relasi Tabel"></a>Menambahkan Tabel dan Relasi Tabel</h2><p>Mengubah model Transaksi dan DB Helper untuk relasi sehingga user hanya melihat transaksi yang dia buat saja</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://fahrifirdaus.web.id/2017/06/Aplikasi-Android-dengan-Basis-Data-Lokal/" data-id="cj3jvrfcg000axkmmetnelbjp" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://fahrifirdaus.web.id/2017/06/Aplikasi-Android-dengan-Basis-Data-Lokal/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://fahrifirdaus.web.id/2017/06/Aplikasi-Android-dengan-Basis-Data-Lokal/">Komentar</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/03/WP-Rest-API-CLient-dengan-Python/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Lebih Tua</strong>
+            <div class="article-nav-title">WP Rest API CLient dengan Python</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">terbaru</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/06/Aplikasi-Android-dengan-Basis-Data-Lokal/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Catatan/">Catatan</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Catatan/Tool-Pemrograman/">Tool Pemrograman</a></p>
+                            <p class="item-title"><a href="/2017/06/Aplikasi-Android-dengan-Basis-Data-Lokal/" class="title">Aplikasi Android dengan Basis Data Lokal</a></p>
+                            <p class="item-date"><time datetime="2017-06-05T08:32:20.000Z" itemprop="datePublished">2017-06-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/WP-Rest-API-CLient-dengan-Python/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/banner.jpg)" alt="WP Rest API CLient dengan Python" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Pemrograman/">Pemrograman</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Pemrograman/Web-Development/">Web Development</a></p>
+                            <p class="item-title"><a href="/2017/03/WP-Rest-API-CLient-dengan-Python/" class="title">WP Rest API CLient dengan Python</a></p>
+                            <p class="item-date"><time datetime="2017-03-28T20:04:06.000Z" itemprop="datePublished">2017-03-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/bagaimana-saya-memilih-mouse/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/gaming-mouse.jpg)" alt="Bagaimana Saya Memilih Mouse" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Catatan/">Catatan</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a></p>
+                            <p class="item-title"><a href="/2017/03/bagaimana-saya-memilih-mouse/" class="title">Bagaimana Saya Memilih Mouse</a></p>
+                            <p class="item-date"><time datetime="2017-03-22T09:01:28.000Z" itemprop="datePublished">2017-03-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/menggugat-lomba-web-smk/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Inilah-Hidup/">Inilah Hidup</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Inilah-Hidup/Inspirasi/">Inspirasi</a></p>
+                            <p class="item-title"><a href="/2017/01/menggugat-lomba-web-smk/" class="title">Menggugat (peraturan) Lomba Web SMK</a></p>
+                            <p class="item-date"><time datetime="2017-01-20T23:20:44.000Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/kenapa-saya-memilih-hexo/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/hexo.png)" alt="Kenapa Saya Memilih Hexo" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/12/kenapa-saya-memilih-hexo/" class="title">Kenapa Saya Memilih Hexo</a></p>
+                            <p class="item-date"><time datetime="2016-12-22T11:38:41.000Z" itemprop="datePublished">2016-12-22</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">kategori</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/">Akademis</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Algoritma/">Algoritma</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Algoritma/Pemrograman-Dasar/">Pemrograman Dasar</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Catatan/">Catatan</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Catatan/Pemrograman-Mobile/">Pemrograman Mobile</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Pemrograman-Berorientasi-Obyek/">Pemrograman Berorientasi Obyek</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Pemrograman-Dasar/">Pemrograman Dasar</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/">Algoritma</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/Catatan/">Catatan</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/Catatan/Inspirasi/">Inspirasi</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Basis-Data/">Basis Data</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/">Catatan</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Hi-Lite/">Hi-Lite</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/Inspirasi/">Inspirasi</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/Tips-Trik/">Tips Trik</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Tool-Pemrograman/">Tool Pemrograman</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/">Inilah Hidup</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/Inspirasi/">Inspirasi</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/Kata-Kata-Bijak/">Kata-Kata Bijak</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman/">Pemrograman</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman/Web-Development/">Web Development</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman/Web-Development/Wordpress/">Wordpress</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman-Mobile/">Pemrograman Mobile</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">arsip</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">Juni 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">Maret 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">Januari 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">Desember 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">Desember 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">Oktober 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">Agustus 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">Februari 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">Oktober 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">Juli 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">Desember 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">Desember 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">awan tag</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Scanner/" style="font-size: 10px;">Scanner</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/arraylist/" style="font-size: 10px;">arraylist</a> <a href="/tags/basis-data/" style="font-size: 10px;">basis data</a> <a href="/tags/belajar/" style="font-size: 10px;">belajar</a> <a href="/tags/blogging/" style="font-size: 10px;">blogging</a> <a href="/tags/collection/" style="font-size: 10px;">collection</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/curiculum-vitae/" style="font-size: 10px;">curiculum vitae</a> <a href="/tags/dasar-pemrograman/" style="font-size: 10px;">dasar pemrograman</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/ergonomis/" style="font-size: 10px;">ergonomis</a> <a href="/tags/framework/" style="font-size: 10px;">framework</a> <a href="/tags/gambar/" style="font-size: 10px;">gambar</a> <a href="/tags/gaming/" style="font-size: 10px;">gaming</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/github/" style="font-size: 20px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gusjigang/" style="font-size: 10px;">gusjigang</a> <a href="/tags/hasil/" style="font-size: 10px;">hasil</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hoax/" style="font-size: 10px;">hoax</a> <a href="/tags/input-console/" style="font-size: 10px;">input console</a> <a href="/tags/inspirasi/" style="font-size: 10px;">inspirasi</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/kartini/" style="font-size: 10px;">kartini</a> <a href="/tags/koding/" style="font-size: 15px;">koding</a> <a href="/tags/konfirmasi/" style="font-size: 10px;">konfirmasi</a> <a href="/tags/linearlayout/" style="font-size: 10px;">linearlayout</a> <a href="/tags/lomba/" style="font-size: 10px;">lomba</a> <a href="/tags/lulusan-IT/" style="font-size: 10px;">lulusan IT</a> <a href="/tags/makan/" style="font-size: 10px;">makan</a> <a href="/tags/motivasi/" style="font-size: 10px;">motivasi</a> <a href="/tags/mouse/" style="font-size: 10px;">mouse</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/orm/" style="font-size: 10px;">orm</a> <a href="/tags/pahlawan/" style="font-size: 10px;">pahlawan</a> <a href="/tags/pemrograman/" style="font-size: 20px;">pemrograman</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/programming/" style="font-size: 10px;">programming</a> <a href="/tags/proses/" style="font-size: 10px;">proses</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/qudsiyyah/" style="font-size: 10px;">qudsiyyah</a> <a href="/tags/rekayasa-perangkat-lunak/" style="font-size: 10px;">rekayasa perangkat lunak</a> <a href="/tags/rest/" style="font-size: 10px;">rest</a> <a href="/tags/rumah-sehat/" style="font-size: 10px;">rumah sehat</a> <a href="/tags/smk/" style="font-size: 10px;">smk</a> <a href="/tags/static-generator/" style="font-size: 10px;">static generator</a> <a href="/tags/sugarorm/" style="font-size: 10px;">sugarorm</a> <a href="/tags/sumber-waras/" style="font-size: 10px;">sumber waras</a> <a href="/tags/tidur/" style="font-size: 10px;">tidur</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/tutorial/" style="font-size: 15px;">tutorial</a> <a href="/tags/wanita/" style="font-size: 10px;">wanita</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-service/" style="font-size: 10px;">web service</a> <a href="/tags/wireless/" style="font-size: 10px;">wireless</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tautan</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 Fahri Firdausillah<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://fahrifirdaus.web.id/2017/06/Aplikasi-Android-dengan-Basis-Data-Lokal/';
+        
+        this.page.identifier = 'Aplikasi-Android-dengan-Basis-Data-Lokal';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'fahri-github' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
