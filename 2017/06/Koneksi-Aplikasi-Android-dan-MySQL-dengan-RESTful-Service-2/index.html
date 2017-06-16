@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://fahrifirdaus.web.id/2017/06/Koneksi-Aplikasi-Android-dan-MySQL-dengan-RESTful-Service-2/index.html">
 <meta property="og:site_name" content="Blog Pribadi Fahri">
 <meta property="og:description" content="Tutorial ini menyambung dari tutorial sebelumnya tentang pengembangan aplikasi Android yang terkoneksi dengan basis data MySQL di server. Pada bagian pertama, kita sudah membahas bagaimana membuat ser">
-<meta property="og:updated_time" content="2017-06-15T03:29:30.000Z">
+<meta property="og:updated_time" content="2017-06-16T02:05:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Koneksi Aplikasi Android dan MySQL dengan RESTful Service (2)">
 <meta name="twitter:description" content="Tutorial ini menyambung dari tutorial sebelumnya tentang pengembangan aplikasi Android yang terkoneksi dengan basis data MySQL di server. Pada bagian pertama, kita sudah membahas bagaimana membuat ser">
@@ -254,8 +254,8 @@
             
             <p>Tutorial ini menyambung dari tutorial sebelumnya tentang pengembangan aplikasi Android yang terkoneksi dengan basis data MySQL di server. Pada bagian pertama, kita sudah membahas bagaimana membuat service untuk aplikasi keuangan pribadi kita, dan pada bagian kedua ini kita akan membuat aplikasi Android-nya.</p>
 <a id="more"></a>
-<h3 id="Clone-Template-Aplikasi"><a href="#Clone-Template-Aplikasi" class="headerlink" title="Clone Template Aplikasi"></a>Clone Template Aplikasi</h3><p>Aplikasi Android yang kita kembangkan di sini akan menggunakan template aplikasi yang sudah tersedia di repository github saya ini. Tujuannya agar kita tidak perlu ribet membuat tampilan yang sudah kita pelajari di tutorial sebelumnya. Jika anda memiliki git di komputer, anda bisa melakukan <em>clone</em> terhadap aplikasi dengan menggunakan perintah berikut:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone</div></pre></td></tr></table></figure>
+<h3 id="Clone-Template-Aplikasi"><a href="#Clone-Template-Aplikasi" class="headerlink" title="Clone Template Aplikasi"></a>Clone Template Aplikasi</h3><p>Aplikasi Android yang kita kembangkan di sini akan menggunakan template aplikasi yang sudah tersedia di <a href="https://github.com/kaqfa/app_template" target="_blank" rel="external">repository github saya ini</a>. Tujuannya agar kita tidak perlu ribet membuat tampilan yang sudah kita pelajari di tutorial sebelumnya. Jika anda memiliki git di komputer, anda bisa melakukan <em>clone</em> terhadap aplikasi dengan menggunakan perintah berikut:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/kaqfa/app_template.git</div></pre></td></tr></table></figure>
 <p>Jika anda tidak memiliki aplikasi git, anda bisa mendownload template tersebut melalui link ini.</p>
 <h3 id="Mempersiapkan-Android-Volley"><a href="#Mempersiapkan-Android-Volley" class="headerlink" title="Mempersiapkan Android Volley"></a>Mempersiapkan Android Volley</h3><p>Koneksi ke web service dapat dilakukan dengan menggunakan pustaka jaringan bawaaan dari Android, namun pustaka tersebut sayangnya agak susah digunakan dan juga memiliki beberapa kekurangan. Sebagai alternatifnya, di sini kita akan menggunakan pustaka Android Volley untuk memudahkan kita terkoneksi dengan REST service yang telah kita buat.</p>
 <p>Sebelum dapat menggunakan pustaka Volley, kita harus menambahkannya dependency berikut pada file <code>build.gradle</code> yang level <code>Module</code>:</p>
@@ -301,7 +301,7 @@
 
 </div>
 
-    <a data-url="http://fahrifirdaus.web.id/2017/06/Koneksi-Aplikasi-Android-dan-MySQL-dengan-RESTful-Service-2/" data-id="cj3xva46x000akrmmuvgaqr85" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+    <a data-url="http://fahrifirdaus.web.id/2017/06/Koneksi-Aplikasi-Android-dan-MySQL-dengan-RESTful-Service-2/" data-id="cj3z7pt6c000bjlmmpp3pfbyf" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
