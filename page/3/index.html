@@ -167,11 +167,11 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                29
+                30
                 <span>pos</span>
             </div>
             <div class="article-info-block">
-                64
+                66
                 <span>tag</span>
             </div>
         </div>
@@ -220,6 +220,156 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-seni-pemrograman-modern" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<a href="/2015/02/seni-pemrograman-modern/" itemprop="url">
+            <img src="/images/url.jpeg" class="article-banner" />
+        </a>
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/02/seni-pemrograman-modern/">Seni Pemrograman Modern</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/02/seni-pemrograman-modern/">
+            <time datetime="2015-02-09T10:19:33.000Z" itemprop="datePublished">2015-02-09</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Catatan/">Catatan</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/framework/">framework</a>, <a class="tag-link" href="/tags/pemrograman/">pemrograman</a>, <a class="tag-link" href="/tags/plugin/">plugin</a>, <a class="tag-link" href="/tags/web-service/">web service</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h3 id="Intro-…"><a href="#Intro-…" class="headerlink" title="Intro …"></a>Intro …</h3><p>Tahun lalu saya pernah diminta untuk mengisi kuliah umum di Universitas Muria Kudus, saat itu materi yang saya tawarkan (dan diterima oleh panitia) adalah “<em>The Art of Modern Programming</em>“. Sebenernya kalau dipikir juga nggak modern-modern amat sih, materi yang saya sampaikan sudah ada sejak lama dan sudah jamak yang menggunakan. Hanya saja saya berpikir kebanyakan mahasiswa (kuper) di kampus masih banyak yang mengenali pemrograman hanya sebatas CRUD dengan teknik konvensional, sehingga saya sepertinya teknik tersebut bakal terlihat modern &amp; menarik buat mereka.</p>
+<p>Ada tiga materi utama yang saya sampaikan yaitu:</p>
+<ol>
+<li>Software Development Framework</li>
+<li>Web Service (API)</li>
+<li>dan Plugin Development</li>
+</ol>
+<p>Ketiga materi tersebut menurut saya sangat penting untuk diketahui semua mahasiswa (dan selain mahasiswa) yang sedang mendalami dunia pemrograman. Meski demikian, seringkali materi tersebut tidak masuk ke dalam kurikulum perkuliahan mata kuliah apapun dengan berbagai macam alasan. Alasan pentingnya (setidaknya pengenalan pada) materi tersebut adalah untuk memudahkan kita (software developer) mengembangkan aplikasi secara lebih cepat dan lebih efisien dengan menggunakan komponen program yang telah dibuat <em>excelently</em> oleh developer lain, sehingga kita bisa lebih berkonsentrasi pada pengembangan modul khusus yang merupakan kekuatan software kita.</p>
+            <p class="article-more-link">
+                <a href="/2015/02/seni-pemrograman-modern/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://fahrifirdaus.web.id/2015/02/seni-pemrograman-modern/" data-id="cj7pwlkpn0027i8mmlnjwb9oh" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://fahrifirdaus.web.id/2015/02/seni-pemrograman-modern/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://fahrifirdaus.web.id/2015/02/seni-pemrograman-modern/">Komentar</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-doesnt-work-right" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -271,7 +421,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://fahrifirdaus.web.id/2014/10/doesnt-work-right/" data-id="cj7lm9lof00184immg2rsz15z" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+    <a data-url="http://fahrifirdaus.web.id/2014/10/doesnt-work-right/" data-id="cj7pwlkou001bi8mmj2h6mxu9" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -400,7 +550,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://fahrifirdaus.web.id/2014/10/computer-science-education-cannot-make-anybody-an-expert-programmer/" data-id="cj7lm9lob00134imm4efdmqn3" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+    <a data-url="http://fahrifirdaus.web.id/2014/10/computer-science-education-cannot-make-anybody-an-expert-programmer/" data-id="cj7pwlkos0015i8mmjsb62itc" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -529,7 +679,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://fahrifirdaus.web.id/2014/07/belajar-pemrograman-dengan-javascript-variabel-tipe-data/" data-id="cj7lm9lo6000x4immgujiikvq" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+    <a data-url="http://fahrifirdaus.web.id/2014/07/belajar-pemrograman-dengan-javascript-variabel-tipe-data/" data-id="cj7pwlkol000xi8mmsdkfr1vn" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -663,7 +813,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://fahrifirdaus.web.id/2014/07/belajar-pemrograman-dengan-javascript-intro/" data-id="cj7lm9lnz000s4imm2czm3xlv" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+    <a data-url="http://fahrifirdaus.web.id/2014/07/belajar-pemrograman-dengan-javascript-intro/" data-id="cj7pwlkog000vi8mmg9v2dx15" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -797,7 +947,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://fahrifirdaus.web.id/2014/04/console-input-menggunakan-scanner-java/" data-id="cj7lm9loc00154immymjivpke" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+    <a data-url="http://fahrifirdaus.web.id/2014/04/console-input-menggunakan-scanner-java/" data-id="cj7pwlkot0018i8mmjh9h2mgc" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -931,7 +1081,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://fahrifirdaus.web.id/2013/12/mysql-tutorial-1st-meeting/" data-id="cj7lm9lox001r4immoxx36a6a" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+    <a data-url="http://fahrifirdaus.web.id/2013/12/mysql-tutorial-1st-meeting/" data-id="cj7pwlkpc001vi8mmzaj2khfg" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1075,7 +1225,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://fahrifirdaus.web.id/2012/12/kunci-belajar-makan-enak-tidur-enak/" data-id="cj7lm9lov001o4immkqi4xjdg" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+    <a data-url="http://fahrifirdaus.web.id/2012/12/kunci-belajar-makan-enak-tidur-enak/" data-id="cj7pwlkpa001ri8mmzo37o4uv" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1210,7 +1360,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://fahrifirdaus.web.id/2012/12/hello-world/" data-id="cj7lm9loo001h4immuwsrgmx0" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+    <a data-url="http://fahrifirdaus.web.id/2012/12/hello-world/" data-id="cj7pwlkp7001li8mmoiv5ljc6" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1345,7 +1495,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://fahrifirdaus.web.id/2012/11/hello-world-in-action/" data-id="cj7lm9loj001b4imm8jlzm9b3" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+    <a data-url="http://fahrifirdaus.web.id/2012/11/hello-world-in-action/" data-id="cj7pwlkoy001hi8mmicdqlkgb" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1439,6 +1589,25 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/09/compile-aplikasi-android-ke-smartphone/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/akademik/">akademik</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/akademik/pemrograman/">pemrograman</a></p>
+                            <p class="item-title"><a href="/2017/09/compile-aplikasi-android-ke-smartphone/" class="title">Compile Aplikasi Android ke Smartphone</a></p>
+                            <p class="item-date"><time datetime="2017-09-18T06:05:10.000Z" itemprop="datePublished">2017-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/09/Tutorial-Git-Github-Command-Prompt/" class="thumbnail">
     
     
@@ -1512,25 +1681,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/03/WP-Rest-API-CLient-dengan-Python/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/banner.jpg)" alt="WP Rest API CLient dengan Python" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Pemrograman/">Pemrograman</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Pemrograman/Web-Development/">Web Development</a></p>
-                            <p class="item-title"><a href="/2017/03/WP-Rest-API-CLient-dengan-Python/" class="title">WP Rest API CLient dengan Python</a></p>
-                            <p class="item-date"><time datetime="2017-03-28T20:04:06.000Z" itemprop="datePublished">2017-03-29</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1540,7 +1690,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">kategori</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/">Akademis</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Algoritma/">Algoritma</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Algoritma/Pemrograman-Dasar/">Pemrograman Dasar</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Catatan/">Catatan</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Catatan/Pemrograman-Mobile/">Pemrograman Mobile</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Pemrograman-Berorientasi-Obyek/">Pemrograman Berorientasi Obyek</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Pemrograman-Dasar/">Pemrograman Dasar</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/">Algoritma</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/Catatan/">Catatan</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/Catatan/Inspirasi/">Inspirasi</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Basis-Data/">Basis Data</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/">Catatan</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Hi-Lite/">Hi-Lite</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/Inspirasi/">Inspirasi</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/Tips-Trik/">Tips Trik</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Tool-Pemrograman/">Tool Pemrograman</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/">Inilah Hidup</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/Inspirasi/">Inspirasi</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/Kata-Kata-Bijak/">Kata-Kata Bijak</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman/">Pemrograman</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman/Web-Development/">Web Development</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman/Web-Development/Wordpress/">Wordpress</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman-Mobile/">Pemrograman Mobile</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/">Akademis</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Algoritma/">Algoritma</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Algoritma/Pemrograman-Dasar/">Pemrograman Dasar</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Catatan/">Catatan</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Catatan/Pemrograman-Mobile/">Pemrograman Mobile</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Pemrograman-Berorientasi-Obyek/">Pemrograman Berorientasi Obyek</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Akademis/Pemrograman-Dasar/">Pemrograman Dasar</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/">Algoritma</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/Catatan/">Catatan</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algoritma/Catatan/Inspirasi/">Inspirasi</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Basis-Data/">Basis Data</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/">Catatan</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Hi-Lite/">Hi-Lite</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/">Inilah Hidup</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/Inspirasi/">Inspirasi</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Inilah-Hidup/Tips-Trik/">Tips Trik</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Catatan/Tool-Pemrograman/">Tool Pemrograman</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/">Inilah Hidup</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/Inspirasi/">Inspirasi</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Inilah-Hidup/Kata-Kata-Bijak/">Kata-Kata Bijak</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman/">Pemrograman</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman/Web-Development/">Web Development</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman/Web-Development/Wordpress/">Wordpress</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pemrograman-Mobile/">Pemrograman Mobile</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/akademik/">akademik</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/akademik/pemrograman/">pemrograman</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/akademik/pemrograman/android/">android</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul>
         </div>
     </div>
 
@@ -1549,7 +1699,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">arsip</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">Juni 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">Maret 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">Januari 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">Desember 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">Desember 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">Oktober 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">Agustus 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">Februari 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">Oktober 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">Juli 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">Desember 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">Desember 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">Juni 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">Maret 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">Januari 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">Desember 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">Desember 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">Oktober 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">Agustus 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">Februari 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">Oktober 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">Juli 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">Desember 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">Desember 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1558,7 +1708,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">awan tag</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Scanner/" style="font-size: 10px;">Scanner</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/arraylist/" style="font-size: 10px;">arraylist</a> <a href="/tags/basis-data/" style="font-size: 10px;">basis data</a> <a href="/tags/belajar/" style="font-size: 10px;">belajar</a> <a href="/tags/blogging/" style="font-size: 10px;">blogging</a> <a href="/tags/cloud-database/" style="font-size: 10px;">cloud database</a> <a href="/tags/collection/" style="font-size: 10px;">collection</a> <a href="/tags/command-prompt/" style="font-size: 10px;">command prompt</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/curiculum-vitae/" style="font-size: 10px;">curiculum vitae</a> <a href="/tags/dasar-pemrograman/" style="font-size: 10px;">dasar pemrograman</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/ergonomis/" style="font-size: 10px;">ergonomis</a> <a href="/tags/firebase/" style="font-size: 10px;">firebase</a> <a href="/tags/framework/" style="font-size: 10px;">framework</a> <a href="/tags/gambar/" style="font-size: 10px;">gambar</a> <a href="/tags/gaming/" style="font-size: 10px;">gaming</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 16.67px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gusjigang/" style="font-size: 10px;">gusjigang</a> <a href="/tags/hasil/" style="font-size: 10px;">hasil</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hoax/" style="font-size: 10px;">hoax</a> <a href="/tags/input-console/" style="font-size: 10px;">input console</a> <a href="/tags/inspirasi/" style="font-size: 10px;">inspirasi</a> <a href="/tags/java/" style="font-size: 13.33px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/kartini/" style="font-size: 10px;">kartini</a> <a href="/tags/koding/" style="font-size: 13.33px;">koding</a> <a href="/tags/konfirmasi/" style="font-size: 10px;">konfirmasi</a> <a href="/tags/linearlayout/" style="font-size: 10px;">linearlayout</a> <a href="/tags/lomba/" style="font-size: 10px;">lomba</a> <a href="/tags/lulusan-IT/" style="font-size: 10px;">lulusan IT</a> <a href="/tags/makan/" style="font-size: 10px;">makan</a> <a href="/tags/motivasi/" style="font-size: 10px;">motivasi</a> <a href="/tags/mouse/" style="font-size: 10px;">mouse</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/orm/" style="font-size: 10px;">orm</a> <a href="/tags/pahlawan/" style="font-size: 10px;">pahlawan</a> <a href="/tags/pemrograman/" style="font-size: 16.67px;">pemrograman</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/programming/" style="font-size: 10px;">programming</a> <a href="/tags/proses/" style="font-size: 10px;">proses</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/qudsiyyah/" style="font-size: 10px;">qudsiyyah</a> <a href="/tags/rekayasa-perangkat-lunak/" style="font-size: 10px;">rekayasa perangkat lunak</a> <a href="/tags/rest/" style="font-size: 13.33px;">rest</a> <a href="/tags/rumah-sehat/" style="font-size: 10px;">rumah sehat</a> <a href="/tags/smk/" style="font-size: 10px;">smk</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/static-generator/" style="font-size: 10px;">static generator</a> <a href="/tags/sugarorm/" style="font-size: 10px;">sugarorm</a> <a href="/tags/sumber-waras/" style="font-size: 10px;">sumber waras</a> <a href="/tags/tidur/" style="font-size: 10px;">tidur</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/tutorial/" style="font-size: 13.33px;">tutorial</a> <a href="/tags/wanita/" style="font-size: 10px;">wanita</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-service/" style="font-size: 13.33px;">web service</a> <a href="/tags/wireless/" style="font-size: 10px;">wireless</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
+            <a href="/tags/Scanner/" style="font-size: 10px;">Scanner</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/arraylist/" style="font-size: 10px;">arraylist</a> <a href="/tags/basis-data/" style="font-size: 10px;">basis data</a> <a href="/tags/belajar/" style="font-size: 10px;">belajar</a> <a href="/tags/blogging/" style="font-size: 10px;">blogging</a> <a href="/tags/cloud-database/" style="font-size: 10px;">cloud database</a> <a href="/tags/collection/" style="font-size: 10px;">collection</a> <a href="/tags/command-prompt/" style="font-size: 10px;">command prompt</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/curiculum-vitae/" style="font-size: 10px;">curiculum vitae</a> <a href="/tags/dasar-pemrograman/" style="font-size: 10px;">dasar pemrograman</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/ergonomis/" style="font-size: 10px;">ergonomis</a> <a href="/tags/firebase/" style="font-size: 10px;">firebase</a> <a href="/tags/framework/" style="font-size: 10px;">framework</a> <a href="/tags/gambar/" style="font-size: 10px;">gambar</a> <a href="/tags/gaming/" style="font-size: 10px;">gaming</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 16.67px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gusjigang/" style="font-size: 10px;">gusjigang</a> <a href="/tags/hasil/" style="font-size: 10px;">hasil</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hoax/" style="font-size: 10px;">hoax</a> <a href="/tags/input-console/" style="font-size: 10px;">input console</a> <a href="/tags/inspirasi/" style="font-size: 10px;">inspirasi</a> <a href="/tags/java/" style="font-size: 13.33px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/kartini/" style="font-size: 10px;">kartini</a> <a href="/tags/koding/" style="font-size: 13.33px;">koding</a> <a href="/tags/konfirmasi/" style="font-size: 10px;">konfirmasi</a> <a href="/tags/linearlayout/" style="font-size: 10px;">linearlayout</a> <a href="/tags/lomba/" style="font-size: 10px;">lomba</a> <a href="/tags/lulusan-IT/" style="font-size: 10px;">lulusan IT</a> <a href="/tags/makan/" style="font-size: 10px;">makan</a> <a href="/tags/motivasi/" style="font-size: 10px;">motivasi</a> <a href="/tags/mouse/" style="font-size: 10px;">mouse</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/orm/" style="font-size: 10px;">orm</a> <a href="/tags/pahlawan/" style="font-size: 10px;">pahlawan</a> <a href="/tags/pemrograman/" style="font-size: 16.67px;">pemrograman</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/programming/" style="font-size: 10px;">programming</a> <a href="/tags/proses/" style="font-size: 10px;">proses</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/qudsiyyah/" style="font-size: 10px;">qudsiyyah</a> <a href="/tags/rekayasa-perangkat-lunak/" style="font-size: 10px;">rekayasa perangkat lunak</a> <a href="/tags/rest/" style="font-size: 13.33px;">rest</a> <a href="/tags/rumah-sehat/" style="font-size: 10px;">rumah sehat</a> <a href="/tags/smartphone/" style="font-size: 10px;">smartphone</a> <a href="/tags/smk/" style="font-size: 10px;">smk</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/static-generator/" style="font-size: 10px;">static generator</a> <a href="/tags/sugarorm/" style="font-size: 10px;">sugarorm</a> <a href="/tags/sumber-waras/" style="font-size: 10px;">sumber waras</a> <a href="/tags/tidur/" style="font-size: 10px;">tidur</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/tutorial/" style="font-size: 16.67px;">tutorial</a> <a href="/tags/wanita/" style="font-size: 10px;">wanita</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-service/" style="font-size: 13.33px;">web service</a> <a href="/tags/wireless/" style="font-size: 10px;">wireless</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
         </div>
     </div>
 
