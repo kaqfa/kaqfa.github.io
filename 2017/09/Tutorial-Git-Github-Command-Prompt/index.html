@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://fahrifirdaus.web.id/2017/09/Tutorial-Git-Github-Command-Prompt/index.html">
 <meta property="og:site_name" content="Blog Pribadi Fahri">
 <meta property="og:description" content="Pada postingan sebelumnya saya telah menjelaskan pentingnya penggunaan Github untuk programmer, selain itu saya juga sudah pernah menjelaskan cara menggunakan Github dengan Github Desktop. Nah pada tu">
-<meta property="og:updated_time" content="2017-09-15T08:32:35.000Z">
+<meta property="og:updated_time" content="2017-09-19T05:13:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tutorial Git & Github (Command Prompt)">
 <meta name="twitter:description" content="Pada postingan sebelumnya saya telah menjelaskan pentingnya penggunaan Github untuk programmer, selain itu saya juga sudah pernah menjelaskan cara menggunakan Github dengan Github Desktop. Nah pada tu">
@@ -259,6 +259,46 @@ ga('send', 'pageview');
         
             
             <p>Pada postingan sebelumnya saya telah menjelaskan <a href="http://fahrifirdaus.web.id/2015/02/github-curriculum-vitae-untuk-programmer/">pentingnya penggunaan Github untuk programmer</a>, selain itu saya juga sudah pernah menjelaskan <a href="http://fahrifirdaus.web.id/2015/09/tutorial-github-dasar-windows/">cara menggunakan Github dengan Github Desktop</a>. Nah pada tutorial ini saya ingin menjelaskan bagaimana cara menggunakan Github dengan menggunakan <em>command prompt</em>.</p>
+<p>Pada tutorial ini saya akan menggunakan sebuah IDE keren bernama Android Studio untuk memberikan contoh pembuatan dan perubahan koding sebuah aplikasi. Sebagai sebuah IDE dengan status keren, Android Studio pastinya sudah memiliki fitur Git &amp; Github Integration. Namun seperti yang saya jelaskan di atas, pada tutorial ini fitur tersebut tidak akan digunakan dan malah akan menggunakan antarmuka yang sangat sederhana yaitu antarmuka console (atau di windows disebut dengan <em>command prompt</em>).<a id="more"></a></p>
+<h3 id="Langkah-1-Membuat-Project-di-Android-Studio"><a href="#Langkah-1-Membuat-Project-di-Android-Studio" class="headerlink" title="Langkah 1. Membuat Project di Android Studio"></a>Langkah 1. Membuat Project di Android Studio</h3><p>Berbeda dari beberapa tutorial lain, kita tidak memulai dengan Git dan Github, tapi kita akan mulai dari membuat project dulu. Alasannya adalah, kita akan mengasumsikan diri kita sendiri sebagai orang yang sedang bertaubat, ingin <em>move on</em> dari aliran sesat yaitu coding tanpa menggunakan CVS, menuju ke jalan yang lebih lurus yaitu menggunakan Github untuk repository dan versioning code.</p>
+<p>Langkah pertama ini boleh diganti dengan membuat project pemrograman apapun dengan bahasa pemrograman apapun dan IDE apapun jika dirasa Android Studio terlalu berat. Atau bahkan jika kita pengen ngirit, boleh saja pake Editor seperti SublimeText, Atom, atau bahkan Notepad++. Selain itu karena tutorial ini bukanlah tutorial Android, maka saya akan menjelaskan langkah pertama ini secara cepat:</p>
+<ol>
+<li>Buka Android Studio</li>
+<li>Pilih menu <code>Start new Android Studio project</code></li>
+<li>Berikan isian <code>Demo Github</code> pada nama aplikasi, dan langsung klik tombol <code>next</code></li>
+<li>Centang pilihan <code>Phone &amp; Tablet</code> serta pilih minimum SDK <code>API 16: Android 4.1 (Jelly Bean)</code> kemudian klik lagi tombol <code>next</code></li>
+<li>Biar terlihat keren, pilih saja <code>Navigation Drawer Activity</code> pada pilihan Activity-nya kemudian klik tombol <code>next</code></li>
+<li>Terakhir biarkan saja inputan yang ada, dan klik tombol <code>Finish</code></li>
+</ol>
+<p>Tunggu beberapa saat hingga Android Studio selesai membuatkan struktur minimal dari project android yang telah kita pilih. Setelah selesai, boleh-boleh saja kita menekan tombol <code>Run</code> untuk menjalankan aplikasi Android minmalis yang telah kita buat untuk dijalankan di <em>Emulator</em> atau <em>Real Device</em>.</p>
+<h3 id="Langkah-2-Membuat-repository-baru-di-Github"><a href="#Langkah-2-Membuat-repository-baru-di-Github" class="headerlink" title="Langkah 2. Membuat repository baru di Github"></a>Langkah 2. Membuat repository baru di Github</h3><p>Oke di tengah perjalanan membuat aplikasi Android yang sangat keren, tiba-tiba kita teringat kalau kita belum menyimpan source code aplikasi tersebut di Github. Jadi langkah selanjutnya adalah membuat repositori baru di Github (diasumsikan semua udah bikin akun Github ya). Langkahnya adalah:</p>
+<ol>
+<li>Pastikan saat ini lokasi kita ada di Dashboard github, kemudian klik tombol <code>New Repository</code> sebagaimana di bawah ini.</li>
+<li>Masukkan nama repositori yang kita inginkan (hanya menerima karakter dash <code>-</code> dan underscore <code>_</code>).</li>
+<li>Inputan deskripsi bersifat opsional, jadi boleh diisi atau dikosongkan.</li>
+<li>Klik tombol <code>Create Repository</code>, dan kita akan mendapatkan hasil sebagaimana di bawah ini</li>
+</ol>
+<h3 id="Langkah-3-Instalasi-Git-client"><a href="#Langkah-3-Instalasi-Git-client" class="headerlink" title="Langkah 3. Instalasi Git client"></a>Langkah 3. Instalasi Git client</h3><p>Git client merupakan aplikasi desktop yang digunakan untuk membuat repository lokal sekaligus berinteraksi dengan hosted git seperti Github. Ada banyak pilihan Git client, termasuk diantaranya adalah Github for Windows seperti yang pernah dijelaskan pada <a href="http://fahrifirdaus.web.id/2015/09/tutorial-github-dasar-windows/">tutorial saya sebelumnya</a>. Kali ini Git client yang kita gunakan adalah Git client buatan dari Git sendiri yang bisa didownload pada <a href="git-scm.com">link ini</a>.</p>
+<p>Seperti halnya dengan instalasi kebanyakan aplikasi Windows lain, kita cukup klik tombol <code>next</code> beberapa kali, kemudian klik tombol <code>Finish</code> di akhirnya.</p>
+<h3 id="Langkah-4-Membuat-repository-lokal-dan-menghubungkan-dengan-Github"><a href="#Langkah-4-Membuat-repository-lokal-dan-menghubungkan-dengan-Github" class="headerlink" title="Langkah 4. Membuat repository lokal dan menghubungkan dengan Github"></a>Langkah 4. Membuat repository lokal dan menghubungkan dengan Github</h3><p>Langkah selanjutnya adalah membuat repositori lokal pada project android yang telah kita buat dan menghubungkannya dengan akun Github yang telah kita buat. Caranya buka console / command prompt kemudian ketikkan perintah berikut baris per baris:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; cd /path/to/android/project</div><div class="line">&gt; git init</div><div class="line">&gt; git add -A</div><div class="line">&gt; git set global user.name &quot;fahri firdausillah&quot;</div><div class="line">&gt; git set global user.email &quot;elfaatta@gmail.com&quot;</div><div class="line">&gt; git remote add origin https://github.com/repository-anda</div><div class="line">&gt; git commit -m &quot;catatan penyimpanan&quot;</div><div class="line">&gt; git push set origin master</div></pre></td></tr></table></figure>
+<ol>
+<li>Perintah baris pertama untuk memastikan kita berada pada folder project android kita </li>
+<li>Perintah baris kedua berguna untuk membuat repositori baru pada folder saat ini</li>
+<li>Sedangkan baris perintah ketiga untuk menambahkan semua file yang telah kita buat pada stagging area</li>
+<li>Perintah baris ke 4 dan 5 hanya dijakanlan jika ini adalah pertama kali kita melakukan operasi git (setelah instalasi git client), perintah tersebut digunakan untuk mengeset nama dan email yang diasosiasikan dengan pemakaian git</li>
+<li>Perintah baris ke 6 Untuk menyimpan perubahan di repository lokal</li>
+<li>Sedangkan baris perintah ke 7 digunakan untuk menghubungkan repositori lokal kita dengan repositori github</li>
+<li>Terakhir baris perintah ke 8 digunakan untuk meng-upload semua pekerjaan kita ke Github</li>
+</ol>
+<p>Setelah menjalankan baris perintah ke 8 kita akan diminta memasukkan username &amp; password github untuk otentikasi. Kemudian berhasil menjalankan proses itu semua, maka kita bisa mengecek perubahannya di repository github kita.</p>
+<h3 id="Langkah-5-Melakukan-perubahan-dan-mengupload-perubahan-source-code"><a href="#Langkah-5-Melakukan-perubahan-dan-mengupload-perubahan-source-code" class="headerlink" title="Langkah 5. Melakukan perubahan dan mengupload perubahan source code"></a>Langkah 5. Melakukan perubahan dan mengupload perubahan source code</h3><p>Langkah panjang yang kita lakukan pada langkah ke 4 hanya dilakukan pada saat pertama kali menghubungkan repositori lokal dengan repositori Github. Selanjutnya jika kita membuat perubahan apapun kita cukup menjalankan tiga baris perintah berikut pada console:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; git add -A</div><div class="line">&gt; git commit -m &quot;catatan commit&quot;</div><div class="line">&gt; git push</div></pre></td></tr></table></figure>
+<p>Ketiga perintah tersebut berarti adalah menambahkan hasil pekerjaan ke stagging area, menyimpan perubahan pada repositori lokal, dan mengupload perubahan ke Github. Ketiga perintah ini kemungkinan adalah perintah git yang paling sering kita eksekusi.</p>
+<h3 id="Mengecek-status-git"><a href="#Mengecek-status-git" class="headerlink" title="Mengecek status git"></a>Mengecek status git</h3><p>Sebagai tambahan proses, jika kita ingin mengecek status repositori git lokal kita saat ini (misalkan untuk mencari tahu apakah perubahan sudah di-commit atau belum), kita dapat menjalankan perintah <code>git status</code> (tentu saja) pada direktori repositori kita.</p>
+<p>Adapun jika kita ingin mengecek saat ini repository lokal kita terhubung ke mana saja, kita dapat menggunakan perintah <code>git remote -v</code>.</p>
+<h3 id="Penutup"><a href="#Penutup" class="headerlink" title="Penutup"></a>Penutup</h3><p>Cukup sudah tutorial paling dasar penggunaan github dengan menggunakan command prompt. Tentu saja alur kerja pengembangan software dengan menggunakan Git sebagai version control-nya tidak hanya berhenti sampai di situ saja. Beberapa proses lain antara lain <strong>branching</strong>, <strong>merging</strong>, <strong>conflict resolution</strong>, <strong>rollback</strong>, dan lain sebagainya. Di bawah ini adalah beberapa sumber tambahan yang bisa dijadikan referensi untuk mempelajari lebih lanjut penggunaan Git dan Github untuk version control.</p>
+<p><em>Wallahu A’lam</em></p>
 
         
         </div>
@@ -269,7 +309,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://fahrifirdaus.web.id/2017/09/Tutorial-Git-Github-Command-Prompt/" data-id="cj7pwlknz000ii8mmrg1pyzpm" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
+    <a data-url="http://fahrifirdaus.web.id/2017/09/Tutorial-Git-Github-Command-Prompt/" data-id="cj8f1s4ai000b9z77i2c1ucn2" class="article-share-link"><i class="fa fa-share"></i>Bagikan</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
